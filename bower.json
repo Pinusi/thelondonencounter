@@ -9,7 +9,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "IN/scripts/bower_components",
+    "IN/bower_components",
     "test",
     "tests"
   ],

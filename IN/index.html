@@ -3,22 +3,148 @@
 <head>
 	<title>The London Encounter</title>
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/foundation/css/foundation.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/foundation/css/normalize.css">
 	<!-- bower:js -->
-	<script src="scripts/bower_components/modernizr/modernizr.js"></script>
-	<script src="scripts/bower_components/jquery/dist/jquery.js"></script>
-	<script src="scripts/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
-	<script src="scripts/bower_components/ScrollMagic/js/jquery.scrollmagic.js"></script>
-	<script src="scripts/bower_components/fastclick/lib/fastclick.js"></script>
-	<script src="scripts/bower_components/jquery.cookie/jquery.cookie.js"></script>
-	<script src="scripts/bower_components/jquery-placeholder/jquery.placeholder.js"></script>
-	<script src="scripts/bower_components/foundation/js/foundation.js"></script>
+	<script src="bower_components/modernizr/modernizr.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+	<script src="bower_components/ScrollMagic/js/jquery.scrollmagic.js"></script>
+	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+	<script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+	<script src="bower_components/foundation/js/foundation.js"></script>
 	<!-- endbower -->
-	<script src="scripts/bower_components/ScrollMagic/js/jquery.scrollmagic.debug.js"></script>
+	<script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+	<script src="bower_components/ScrollMagic/js/jquery.scrollmagic.debug.js"></script>
 	<script src="scripts/scripts.min.js"></script>
 	<script>
 	$(document).ready(function($) {
-		includeTweens();
+		initialize();
 	});
 </script>
 </head>
-<body>ciao</body>
+<body>
+	<div class="logo">
+		<div class="logo_img"></div>
+	</div>
+	<nav class="header">
+		<div class="wrapper">
+  			<div class="row">
+  				<div class="large-6 medium-6 columns left">
+					<ul class="right">
+						<li><a href="#" id="exibitions_link">Exibitions</a></li>
+				      	<li><a href="#" id="talks_link">Talks</a></li>
+				      	<li><a href="#" id="programme_link">Programme</a></li>    	
+					</ul>
+				</div>
+				<div class="large-6 medium-6 columns">
+					<ul  class="left">
+				      	<li><a href="#" id="location_link">Location</a></li>
+				      	<li><a href="#" id="sponsors_link">Organizers</a></li>
+				      	<li>
+				      		<a href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook.png"/></a>
+				      		<a href="#"><img src="imgs/twitter.png"/></a>
+				      	</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--<div>Menu</div>
+		<section class="header_dropdown">
+		    <ul class="left">
+		      	<li><a href="#">Programme</a></li>
+		      	<li><a href="#">Talks</a></li>
+		      	<li><a href="#">Exibitions</a></li>
+		      	<li><a href="#">Location</a></li>
+		      	<li><a href="#">Organizers</a></li>
+		    </ul>
+  		</section>-->
+	</nav>
+  	<div id="home">
+  		<div class="wrapper">
+  			<div class="row">
+  				<div class="large-6 medium-6 hide-for-small-only columns">
+  					<div class="content">
+  						<div class="logo_big"></div>
+  					</div>
+  				</div>
+  				<div class="large-6 medium-6 small-12 columns">
+					<div class="content">
+						<p class="title">the london encounter</p>
+						<p class="date">27.09.2014</p>
+						<p class="where">HOTEL MAYFAIR</p>
+						<p>The London Encounter is a cultural event involving exhibitions, presentations and discussions which, each in their own way, are intended to provoke us to ask: what do we truly desire, what are we living for, and how can we best face the challenges of life?</p>
+						<p>It is a place of dialogue for people of all backgrounds and experiences.</p> 
+						<p>Entrance is free.</p>
+					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div id="programme">
+  		<div class="large-6 medium-6 hide-for-small-only columns">
+  			<div class="content">
+  				<div class="title">programme</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div id="talks">
+  		<div class="large-6 medium-6 hide-for-small-only columns">
+  			<div class="content">
+  				<div class="title">Talks</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div id="exibitions">
+  		<div class="large-6 medium-6 hide-for-small-only columns">
+  			<div class="content">
+  				<div class="title">Exhibitions</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div id="location">
+  		<div class="large-6 medium-6 hide-for-small-only columns">
+  			<div class="content">
+  				<div class="title">Location</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div id="sponsors">
+  		<div class="large-6 medium-6 hide-for-small-only columns">
+  			<div class="content">
+  				<div class="title">Organisers</div>
+  				<p>The London Encounter is organised by a group of friends who met through the Catholic Movement, Communion and Liberation. Our faith makes us want to engage in a dialogue with everyone, of whatever religion, background, political persuasion or tradition, about what it means to be human, what truly fulfils us and how best we can face the challenges of daily life. We believe that only by sharing our experience in a spirit of openness and mutual respect can we build the common good together
+The London Encounter is organised through a charitable trust, Manalive, Charity number 1106302
+</p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="footer">
+  		<div class="wrapper">
+  			<div class="row">
+  				<div class="large-5 medium-6 small-12 columns">
+  					<div class="left_container line">
+  						<div class="f_logo"></div>
+	  					<div class="f_date">27.09.2014</div>
+		  				<div class="f_where">HOTEL MAYFAIR</div>
+		  			</div>
+  				</div>
+  				<div class="large-4 medium-4 small-12 columns gocentral">
+  					<div class="line">
+	  					<div class="f_trademark">®the london encounter</div>
+	  					<div class="f_address">London - UK</div>
+	  					<div class="f_phone">+44 706 434241</br>mail@thelondonencounter.com</div>
+	  				</div>
+  				</div>
+  				<div class="large-3 medium-2 small-12 columns gocentral">
+  					<div class="f_social">
+  						<p>FIND US ON:</p>
+  						<a href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook_foot.png"/></a>
+				      	<a href="#"><img src="imgs/twitter_foot.png"/></a>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+</body>

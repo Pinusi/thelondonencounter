@@ -161,7 +161,7 @@ module.exports = function(grunt) {
                     '*.{ico,png,txt}',
                     '{,*/}*.html',
                     'styles/fonts/{,*/}*.*',
-                    'scripts/bower_components/**'
+                    'bower_components/**'
                 ]
             }]
         }
