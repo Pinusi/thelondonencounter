@@ -65,9 +65,15 @@ module.exports = function(grunt) {
           options: {
               open: true,
               base: [
-                  '<%= cartelle.development %>'
+                  '<%= cartelle.distribution %>'
               ]
           }
+      }
+    },
+
+    wiredep: {
+      target: {
+        src: 'IN/index.html' // point to your HTML file.
       }
     },
 
@@ -92,22 +98,22 @@ module.exports = function(grunt) {
         options: {
             sassDir: '<%= cartelle.development %>/styles',
             cssDir: '.tmp/styles',
-            generatedImagesDir: '<%= cartelle.development %>/images',
-            imagesDir: '<%= cartelle.development %>/images',
+            generatedImagesDir: '<%= cartelle.development %>/imgs',
+            imagesDir: '<%= cartelle.development %>/imgs',
             javascriptsDir: '<%= cartelle.development %>/scripts',
             fontsDir: '<%= cartelle.development %>/styles/fonts',
             importPath: '<%= cartelle.development %>/scripts',
-            httpImagesPath: '/images',
-            httpGeneratedImagesPath: '/images/generated',
+            httpImagesPath: '/imgs',
+            httpGeneratedImagesPath: '/imgs/generated',
             httpFontsPath: '/styles/fonts',
             relativeAssets: false,
             assetCacheBuster: false
         },
-        server: {
-            options: {
-                debugInfo: true
+            server: {
+                options: {
+                    debugInfo: false
+                }
             }
-        }
     },
 
     pkg: grunt.file.readJSON('package.json'),
@@ -115,10 +121,9 @@ module.exports = function(grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
       dist: [
-          'compass',
           'imagemin',
           'svgmin',
-          'cssmin'
+          'compass'
       ]
     },
 
@@ -126,9 +131,9 @@ module.exports = function(grunt) {
         dist: {
             files: [{
                 expand: true,
-                cwd: '<%= cartelle.development %>/images',
+                cwd: '<%= cartelle.development %>/imgs',
                 src: '{,*/}*.{gif,jpeg,jpg,png}',
-                dest: '<%= cartelle.distribution %>/images'
+                dest: '<%= cartelle.distribution %>/imgs'
             }]
         }
     },
@@ -137,9 +142,9 @@ module.exports = function(grunt) {
         dist: {
             files: [{
                 expand: true,
-                cwd: '<%= cartelle.development %>/images',
+                cwd: '<%= cartelle.development %>/imgs',
                 src: '{,*/}*.svg',
-                dest: '<%= cartelle.distribution %>/images'
+                dest: '<%= cartelle.distribution %>/imgs'
             }]
         }
     },
@@ -155,7 +160,8 @@ module.exports = function(grunt) {
                 src: [
                     '*.{ico,png,txt}',
                     '{,*/}*.html',
-                    'styles/fonts/{,*/}*.*'
+                    'styles/fonts/{,*/}*.*',
+                    'scripts/bower_components/**'
                 ]
             }]
         }
@@ -197,7 +203,9 @@ module.exports = function(grunt) {
         'concurrent',
         'uglify',
         'concat',
-        'copy'
+        'cssmin',
+        'copy',
+        'wiredep'
     ]);
 
   // Default task(s).
