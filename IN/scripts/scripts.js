@@ -20,4 +20,8 @@ function initialize () {
 		$(window).scrollTop($("#sponsors").offset().top); 
 		return false; //Prevent Default and event bubbling.
 	});
+
+	$(".sandwich").bind("click", function() {
+		$(".header_dropdown").toggle();
+	});
 }
