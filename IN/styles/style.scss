@@ -22,8 +22,7 @@ $orange: #D16200;
 	width: 242px;
 	height: 103px;
 	margin-left: -121px;
-	border: solid 1px $orange;
-	background-color: #fff;
+	background-color: $orange;
 	z-index: 2;
 	border-radius: 2px;
 	border-radius: 4px;
@@ -33,7 +32,7 @@ $orange: #D16200;
 	box-shadow:         0px 3px 4px 0px rgba(50, 50, 50, 0.19);
 
 	.logo_img{
-		background-image: url("../imgs/logo.png");
+		background-image: url("../imgs/logo_v2.png");
 		width: 209px;
 		height: 79px;
 		position: relative;
@@ -48,7 +47,7 @@ $orange: #D16200;
 	}
 
 	.logo_tablet{
-		background-image: url("../imgs/header_mobile_bg.png");
+		background-image: url("../imgs/header_mobile_bg_v2.png");
 		width: 49px;
 		height: 73px;
 		position: relative;
@@ -201,17 +200,28 @@ nav.header{
 	}
 }
 
+.title{
+		font-size: 59px;
+		line-height: 64px;
+		margin-bottom: 30px;
+	}
+
+	.content{
+		margin-top: 80px;
+	}
+
 #home{
 	background-image: url("../imgs/home_bg.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: #fff;
 	background-attachment: fixed;
-	height: 723px;
+	height: auto;
 	width: 100%;
 	position: relative;
 	z-index: 0;
 	background-size: cover;
+	padding-bottom: 100px;
 
 	@media ( max-width: 640px ){
 		.content{
@@ -266,20 +276,24 @@ nav.header{
 	background-repeat: repeat;
 	background-color: #fff;
 	background-attachment: fixed;
-	height: 100%;
+	color: $dark-grey;
+	height: 690px;
 	width: 100%;
 	position: relative;
 	z-index: 0;
 }
 
 #talks{
-	background-color: #FFDFBF;
-	background-repeat: repeat;
+	background-image: url("../imgs/talks_bg.png");
+	background-repeat: no-repeat;
 	background-attachment: fixed;
-	height: 100%;
+	color: $dark-grey;
+	height: 690px;
 	width: 100%;
 	position: relative;
 	z-index: 0;
+	background-size: cover;
+	background-position: 50%;
 }
 
 #exibitions{
@@ -287,20 +301,92 @@ nav.header{
 	background-repeat: repeat;
 	background-color: #fff;
 	background-attachment: fixed;
-	height: 100%;
+	color: $dark-grey;
 	width: 100%;
 	position: relative;
 	z-index: 0;
+	text-align: center;
+	padding-bottom: 100px;
+
+	.sub_title{
+		font-size: 25px;
+		line-height: 30px;
+		margin-bottom: 20px;
+	}
+
+	.sub_content{
+		line-height: 17px;
+		font-size: 13px;
+	}
+
+	.fixed_height{
+		height: 481px;
+	}
+
+	.orange_line{
+		border-right: solid 1px $orange;
+	}
+
+	@media ( max-width: 640px ){
+		.orange_line{
+			border-right: none;
+
+			.sub_content{
+				border-bottom: solid 1px $orange;
+				margin-bottom: 10px;
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.fixed_height{
+			height: auto;
+		}
+	}
+
 }
 
 #location{
-	background-color: #FFDFBF;
-	background-repeat: repeat;
+	background-image: url("../imgs/location_bg.png");
+	background-repeat: no-repeat;
 	background-attachment: fixed;
-	height: 100%;
+	padding-bottom: 100px;
+	height: auto;
 	width: 100%;
 	position: relative;
 	z-index: 0;
+	background-size: cover;
+	background-position: 50%;
+	color: #fff;
+	text-align: right;
+	word-break: break-word;
+
+	.sub_title{
+		font-size: 30px;
+		line-height: 35px;
+	}
+
+	a img{
+		padding-bottom: 20px;
+	}
+
+	.sub_content{
+
+	}
+
+	.mail{
+		color: $orange;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.map_container{
+		background-repeat: repeat;
+		border: solid 1px #CCCCCC;	
+		-webkit-box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.19);
+		-moz-box-shadow:    0px 3px 4px 0px rgba(50, 50, 50, 0.19);
+		box-shadow:         0px 3px 4px 0px rgba(50, 50, 50, 0.19);
+	}
 }
 
 #sponsors{
@@ -308,26 +394,15 @@ nav.header{
 	background-repeat: repeat;
 	background-color: #fff;
 	background-attachment: fixed;
-	height: 100%;
 	width: 100%;
 	position: relative;
 	z-index: 0;
 	color: $dark-grey;
 	height: 690px;
 
-	.title{
-		font-size: 59px;
-		line-height: 64px;
-		margin-bottom: 30px;
-	}
-
 	p{
 		font-size: 15px;
 		line-height: 21px; 
-	}
-
-	.content{
-		margin-top: 100px;
 	}
 }
 

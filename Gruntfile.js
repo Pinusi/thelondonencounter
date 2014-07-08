@@ -174,6 +174,18 @@ module.exports = function(grunt) {
       }
     },
 
+    'ftp-deploy': {
+        build: {
+          auth: {
+            host: '23.229.173.40',
+            port: 21,
+            authKey: 'key1'
+          },
+          src: '<%= cartelle.distribution %>',
+          dest: 'public_html/test'
+        }
+    },
+
     concat: {
       dist: {}
     },
@@ -215,4 +227,13 @@ module.exports = function(grunt) {
     'watch'
     ]);
 
+  grunt.registerTask('ftp-test', [
+    'build',
+    'ftp-deploy'
+    ]);
+
+  grunt.registerTask('ftp-prod', [
+    'build',
+    'ftp:production'
+    ]);
 };
