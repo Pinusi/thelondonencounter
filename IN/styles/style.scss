@@ -2,9 +2,10 @@
 $light-grey: #9797A5;
 $dark-grey: #535362;
 $orange: #D16200;
+$light-orange: #FBE7D4;
 
 /*FONTS*/
-@font-face {
+/*@font-face {
     font-family: 'genevaregular';
     src: url('fonts/geneva-webfont.eot');
     src: url('fonts/geneva-webfont.eot?#iefix') format('embedded-opentype'),
@@ -14,32 +15,34 @@ $orange: #D16200;
     font-weight: normal;
     font-style: normal;
 
+}*/
+
+body{
+	font-family: 'Droid Serif', serif;
 }
 
 .logo{
 	left: 50%;
 	position: fixed;
-	width: 242px;
-	height: 103px;
-	margin-left: -121px;
+	width: 170px;
+	height: 75px;
+	margin-left: -85px;
 	background-color: $orange;
 	z-index: 2;
 	border-radius: 2px;
 	border-radius: 4px;
 	top: -10px;
-	-webkit-box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.19);
-	-moz-box-shadow:    0px 3px 4px 0px rgba(50, 50, 50, 0.19);
-	box-shadow:         0px 3px 4px 0px rgba(50, 50, 50, 0.19);
 
 	.logo_img{
-		background-image: url("../imgs/logo_v2.png");
-		width: 209px;
-		height: 79px;
+		background-image: url("../imgs/logo_v3.png");
+		width: 128px;
+		height: 50px;
 		position: relative;
 		left: 50%;
-		margin-left: -94px;
+		margin-left: -62px;
 		top: 50%;
-		margin-top: -37px;
+		margin-top: -22px;
+		background-size: cover;
 
 		@media ( max-width: 900px ){
 			display: none;
@@ -47,14 +50,14 @@ $orange: #D16200;
 	}
 
 	.logo_tablet{
-		background-image: url("../imgs/header_mobile_bg_v2.png");
-		width: 49px;
-		height: 73px;
+		background-image: url(../imgs/header_mobile_bg_v3.png);
+		width: 32px;
+		height: 56px;
 		position: relative;
 		left: 50%;
-		margin-left: -24px;
+		margin-left: -15px;
 		top: 50%;
-		margin-top: -37px;
+		margin-top: -23px;
 
 		@media ( min-width: 900px ){
 			display: none;
@@ -62,8 +65,8 @@ $orange: #D16200;
 	}
 
 	@media ( max-width: 900px ){
-		width: 80px;
-		margin-left: -40px;
+		width: 57px;
+		margin-left: -28px;
 	}
 
 	@media ( max-width: 640px ){
@@ -72,13 +75,14 @@ $orange: #D16200;
 }
 
 nav.header{
-	background-image: url("../imgs/header_bg.png");
-	height: 55px;
+	background: rgba( #fff, .9 );
+	height: 60px;
 	width: 100%;
 	position: fixed;
 	top: 0px;
 	z-index: 1;
 	border-top: solid 1px $orange;
+	border-bottom: 1px solid #eeefec;
 
 	.header_dropdown{
 		background-color: $dark-grey;
@@ -87,29 +91,58 @@ nav.header{
 
 	.logo_mobile{
 		background-image: url("../imgs/header_mobile_logo.png");
-		height: 55px;
-		width: 146px;
+		height: 45px;
+		width: 112px;
 		display: block;
+		margin-top: 6px;
+		margin-left: 10px;
 	}
 
 	.sandwich{
 		position: absolute;
 		top: 15px;
 		right: 10px;
-		background-image: url("../imgs/sandwich.png");
-		height: 25px;
-		width: 38px;
+		background: rgba(0,0,0,.2);
+		border: none;
 		display: block;
+		border-radius: 2px;
+		outline: 0;
+		position: absolute;
+		width: 44px;
+		height: 32px;
 		cursor: pointer;
 
+		.sandwich_rel{
+			position: relative;
+		}
+
+		span{
+			height: 2px;
+			position: absolute;
+			left: 6px;
+			right: 6px;
+			top: 7px;
+			background: #fff;
+			border-radius: 2px;
+			display: block;
+
+			&.b2 {
+				top: 15px;
+			}
+
+			&.b3 {
+				top: 23px;
+			}
+		}
+
 		&:hover{
-			background-image: url("../imgs/sandwich_dark.png");
+			background: rgba(0,0,0,.4);
 		}
 	}
 
 	ul{
 		&.left{
-			margin-left: 130px;
+			margin-left: 90px;
 
 			li{
 				float: left;
@@ -118,7 +151,7 @@ nav.header{
 		}
 
 		&.right{
-			margin-right: 130px;
+			margin-right: 90px;
 
 			li{
 				float: right;
@@ -132,13 +165,13 @@ nav.header{
 			text-transform: uppercase;
 
 			a{
-				color: $light-grey;
-				font-family: "genevaregular";
+				color: $dark-grey;
+				font-family: 'Arimo', sans-serif;
 				font-size: 14px;
-				line-height: 50px;
+				line-height: 60px;
 
 				&:hover{
-					color: $dark-grey;
+					color: #000;
 				}
 			}
 		}
@@ -147,7 +180,7 @@ nav.header{
 	@media ( max-width: 900px ){
 		.row ul{
 			&.right{
-				margin-right: 40px;
+				margin-right: 25px;
 
 				li{
 					margin-left: 10px;
@@ -155,7 +188,7 @@ nav.header{
 			}
 
 			&.left{
-				margin-left: 40px;
+				margin-left: 25px;
 
 				li{
 					margin-right: 10px;
@@ -163,21 +196,13 @@ nav.header{
 			}
 
 			a{
-						font-size: 12px;
-					}
+				font-size: 13px;
+			}
 		}
 		
 	}
 
 	@media ( max-width: 640px ){
-		background-image:none;
-		background-color: #fff;
-		border-top:none;
-		border-bottom: solid 1px $dark-grey;
-
-		.logo_mobile{
-
-		}
 
 		.row ul {
 			margin: 0px;
@@ -204,17 +229,21 @@ nav.header{
 		font-size: 59px;
 		line-height: 64px;
 		margin-bottom: 30px;
+
+		@media ( max-width: 640px ){
+			font-size: 47px;
+		}
 	}
 
 	.content{
 		margin-top: 80px;
+		font-family: 'Droid Serif', serif;
 	}
 
 #home{
 	background-image: url("../imgs/home_bg.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-color: #fff;
 	background-attachment: fixed;
 	height: auto;
 	width: 100%;
@@ -231,7 +260,6 @@ nav.header{
 
 	.content{
 		margin-top: 185px;
-		font-family: "genevaregular";
 	}
 
 	.logo_big{
@@ -245,29 +273,38 @@ nav.header{
 		font-size: 53px;
 		line-height: 60px;
 		margin-bottom: 31px;
+		font-family: 'Arimo', sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+		@media ( max-width: 640px ){
+			font-size: 47px;
+		}
 	}
 
 	p{
 		font-size: 16px;
 		line-height: 20px;
 		margin-bottom: 10px;
-		color: $dark-grey;
+		color: #fff;
 	}
 
 	.date{
 		text-transform: uppercase;
 		font-size: 25px;
 		line-height: 32px;
-		color:$orange;
+		color:$light-orange;
 		margin-bottom: 0px;
+		font-family: 'Arimo', sans-serif;
+		font-weight: bold;
 	}
 
 	.where{
 		text-transform: uppercase;
 		font-size: 19px;
 		line-height: 22px;
-		color:$orange;
+		color:$light-orange;
 		margin-bottom: 1.25rem;
+		font-family: 'Arimo', sans-serif;
 	}
 }
 
@@ -296,24 +333,23 @@ nav.header{
 	color: #fff;
 
 	.talk_title{
-		background-image: url("../imgs/map_bg.png");
-		background-repeat: repeat;
-		float: left;
 		padding: 10px;
-		height: 120px;
-		width: 140px;
 		line-height: 20px;
 		font-weight: bold;
 		font-size: 20px;
-		color: $dark-grey;
+		color: #fff;
 		word-break: break-word;
+		font-family: 'Arimo', sans-serif;
 	}
 
 	.desc{
-		margin-left: 160px;
 		font-size: 13px;
 		line-height: 18px;
 		margin-bottom: 30px;
+		font-family: 'Droid Serif', serif;
+		color: $dark-grey;
+		padding: 20px;
+		background: rgba( #fff, .6 );
 	}
 }
 
@@ -333,11 +369,14 @@ nav.header{
 		font-size: 25px;
 		line-height: 30px;
 		margin-bottom: 20px;
+		font-family: 'Arimo', sans-serif;
+		font-weight: bold;
 	}
 
 	.sub_content{
 		line-height: 17px;
 		font-size: 13px;
+		font-family: 'Droid Serif', serif;
 	}
 
 	.fixed_height{
@@ -380,25 +419,26 @@ nav.header{
 	color: #fff;
 	text-align: right;
 	word-break: break-word;
+	font-family: 'Droid Serif', serif;
+	line-height: 22px;
 
 	.sub_title{
 		font-size: 30px;
 		line-height: 35px;
+		margin-bottom: 10px;
 		text-transform: uppercase;
+		font-family: 'Arimo', sans-serif;
+		font-weight: bold;
 	}
 
 	a img{
 		padding-bottom: 20px;
 	}
 
-	.sub_content{
-
-	}
-
 	.mail{
-		color: $orange;
 		margin-top: 20px;
 		margin-bottom: 20px;
+		font-family: 'Droid Serif', serif;
 	}
 
 	.map_container{
@@ -431,7 +471,7 @@ nav.header{
 	background-image: url("../imgs/footer_bg.png");
 	background-repeat: repeat;
 	color: $light-grey;
-	font-family: "genevaregular";
+	font-family: 'Arimo', sans-serif;
 
 	.columns{
 		padding: 20px;
@@ -442,6 +482,7 @@ nav.header{
 		color: $orange;
 		font-size: 30px;
 		line-height: 32px;
+		font-weight: bold;
 	}
 
 	.f_where{
@@ -463,6 +504,7 @@ nav.header{
 		line-height: 23px;
 		margin-bottom: 10px;
 		padding-right: 20px;
+		font-weight: bold;
 	}
 
 	.f_address{
