@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/foundation/css/normalize.css">
 	<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<!-- bower:js -->
 	<script src="bower_components/modernizr/modernizr.js"></script>
@@ -40,15 +41,15 @@
   			<div class="row">
   				<div class="large-6 medium-6 columns hide-for-small-only left">
 					<ul class="right">
-						<li><a href="#" id="exibitions_link">Exibitions</a></li>
-				      	<li><a href="#" id="talks_link">Talks</a></li>
-				      	<li><a href="#" id="programme_link">Programme</a></li>    	
+						<li><a href="#" class="exibitions_link">Exibitions</a></li>
+				      	<li><a href="#" class="talks_link">Talks</a></li>
+				      	<li><a href="#" class="programme_link">Programme</a></li>    	
 					</ul>
 				</div>
 				<div class="large-6 medium-6 hide-for-small-only columns">
 					<ul  class="left">
-				      	<li><a href="#" id="location_link">Location</a></li>
-				      	<li><a href="#" id="sponsors_link">Organizers</a></li>
+				      	<li><a href="#" class="location_link">Location</a></li>
+				      	<li><a href="#" class="sponsors_link">Organizers</a></li>
 				      	<li>
 				      		<a href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook.png"/></a>
 				      		<a href="#"><img src="imgs/twitter.png"/></a>
@@ -64,20 +65,20 @@
 							<span class="b3"></span>
 						</div>
 					</div>
-					<section class="header_dropdown">
-					    <ul>
-					      	<li><a href="#">Programme</a></li>
-					      	<li><a href="#">Talks</a></li>
-					      	<li><a href="#">Exibitions</a></li>
-					      	<li><a href="#">Location</a></li>
-					      	<li><a href="#">Organizers</a></li>
-					    </ul>
-			  		</section>
 				</div>
 			</div>
 		</div>
 	</nav>
-  	<div id="home">
+	<section class="header_dropdown">
+	    <ul>
+	      	<li class="exibitions_link"><a href="#">Programme</a></li>
+	      	<li class="talks_link"><a href="#">Talks</a></li>
+	      	<li class="programme_link"><a href="#">Exibitions</a></li>
+	      	<li class="location_link"><a href="#">Location</a></li>
+	      	<li class="sponsors_link"><a href="#">Organizers</a></li>
+	    </ul>
+	</section>
+  	<div id="home" class='section with-image'>
   		<div class="wrapper">
   			<div class="row">
   				<div class="large-6 medium-6 hide-for-small-only columns">
@@ -98,18 +99,45 @@
   			</div>
   		</div>
   	</div>
-  	<div id="programme">
+  	<div id="programme" class='section'>
   		<div class="wrapper">
   			<div class="row">
 		  		<div class="large-12 medium-12 small-12 columns">
 		  			<div class="content">
 		  				<div class="title">programme</div>
+		  				<div class='tree'>
+		  					<div class='central_pillar'></div>
+		  					<div class='event left'>
+		  						<div class='event_rel'>
+		  							<div class="time_line">
+		  								<span class='circle'></span>
+			  							<span class='line'></span>
+		  							</div>
+			  						<div class='hour'>9:00</div>
+			  						<div class='icon'><i class="fa fa-play fa-2x"></i></div> 
+			  						<div class='desc'>Opening</div>
+			  					</div>
+		  					</div>
+
+		  					<div class='event right'>
+		  						<div class='event_rel'>
+		  							<div class="time_line">
+		  								<span class='line'></span>
+		  								<span class='circle'></span>
+		  							</div>
+			  						<div class='hour'>9:00</div>
+			  						<div class='icon'><i class="fa fa-play fa-2x"></i></div> 
+			  						<div class='desc'>Introduction</div>
+			  					</div>
+		  					</div>
+
+		  				</div>
 		  			</div>
 		  		</div>
 		  	</div>
 		</div>
   	</div>
-  	<div id="talks">
+  	<div id="talks" class='section with-image'>
   		<div class="wrapper">
   			<div class="row">
 		  		<div class="large-12 medium-12 small-12 columns">
@@ -131,7 +159,7 @@ All of us are educators in one way or another – whether by being parents, havi
 		  	</div>
 		</div>
   	</div>
-  	<div id="exibitions">
+  	<div id="exibitions" class='section'>
   		<div class="wrapper">
   			<div class="row">
 		  		<div class="large-12 medium-12 small-12 columns">
@@ -151,7 +179,7 @@ This exhibition tells John Henry Newman’s dramatic story, from which it emerge
   			</div>
   		</div>
   	</div>
-  	<div id="location">
+  	<div id="location" class='section with-image'>
   		<div class="wrapper">
   			<div class="row">
 		  		<div class="large-12 medium-12 small-12 columns">
@@ -174,7 +202,7 @@ This exhibition tells John Henry Newman’s dramatic story, from which it emerge
 		  	</div>
 		</div>
   	</div>
-  	<div id="sponsors">
+  	<div id="sponsors" class='section'>
   		<div class="wrapper">
   			<div class="row">
 		  		<div class="large-12 medium-12 small-12 columns">
