@@ -25,6 +25,10 @@ body{
 .content{
 	margin-top: 80px;
 	font-family: 'Droid Serif', serif;
+
+	@media ( max-width: 640px ){
+		margin-top: 40px;
+	}
 }
 
 .section{
@@ -32,14 +36,22 @@ body{
 	position: relative;
 	z-index: 0;
 	padding-bottom: 100px;
-	background-attachment: fixed;
+
+	@media ( max-width: 640px ){
+		padding-bottom: 50px;
+	}
+
+	@media ( min-width: 640px ){
+		background-attachment: fixed;
+	}
+	
 	background-repeat: repeat;
 
 	&.with-image{
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
-		background-position: 50%;
+		background-position: 50% 50%;
 	}
 }
 
@@ -255,14 +267,14 @@ section.header_dropdown{
 	width: 100%;
 	height: 100%;
 	z-index: 10;
-	-webkit-transform: translate3d(0px,-100%,0);
+	-webkit-transform: translate3d(0px,-100%,0px);
 	transform: translate3d(0px,-100%,0);
 	-webkit-transition: all 400ms cubic-bezier(0.08,.36,.04,1);
 	transition: all 400ms cubic-bezier(0.08,.36,.04,1);
 
 	&.showmenu{
-		-webkit-transform: translate3d(0px,0,0);
-		transform: tra5nslate3d(0px,0,0);
+		-webkit-transform: translate3d(0px,0px,0px);
+		transform: translate3d(0px,0px,0px);
 	}
 
 	ul{
@@ -355,6 +367,10 @@ section.header_dropdown{
 
 	.content{
 		margin-top: 185px;
+
+		@media ( max-width: 640px ){
+			margin-top: 120px;
+		}
 	}
 
 	.logo_big{
@@ -372,7 +388,8 @@ section.header_dropdown{
 		text-transform: uppercase;
 		font-weight: 700;
 		@media ( max-width: 640px ){
-			font-size: 47px;
+			font-size: 43px;
+			line-height: 48px;
 		}
 	}
 
@@ -662,14 +679,6 @@ section.header_dropdown{
 		margin-top: 20px;
 		margin-bottom: 20px;
 		font-family: 'Droid Serif', serif;
-	}
-
-	.map_container{
-		background-repeat: repeat;
-		border: solid 1px #CCCCCC;	
-		-webkit-box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.19);
-		-moz-box-shadow:    0px 3px 4px 0px rgba(50, 50, 50, 0.19);
-		box-shadow:         0px 3px 4px 0px rgba(50, 50, 50, 0.19);
 	}
 }
 
