@@ -8,12 +8,12 @@ function initialize () {
 	attachClick( ".sponsors_link" , "#sponsors" );
 
 	$(".sandwich").bind("click", function() {
-		$(".header_dropdown").toggle();
+		$(".header_dropdown").toggleClass('showmenu');
 		return false; //Prevent Default and event bubbling.
 	});
 
 	$(".close").bind("click", function() {
-		$(".header_dropdown").toggle();
+		$(".header_dropdown").toggleClass('showmenu');
 		return false; //Prevent Default and event bubbling.
 	});
 }
@@ -24,7 +24,7 @@ function attachClick( source_class, target_id ){
 		$(window).scrollTop($( target_id ).offset().top);
 
 		if($(".header_dropdown").is(":visible") ){
-			$(".header_dropdown").toggle();
+			$(".header_dropdown").toggleClass('showmenu');
 		}
 
 		return false; //Prevent Default and event bubbling.
