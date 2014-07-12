@@ -1,6 +1,8 @@
 function initialize () {
 	$(document).foundation();
 
+	attachClick( ".logo" , "#home" );
+	attachClick( ".home_link" , "#home" );
 	attachClick( ".programme_link" , "#programme" );
 	attachClick( ".talks_link" , "#talks" );
 	attachClick( ".exibitions_link" , "#exibitions" );
