@@ -442,6 +442,10 @@ section.header_dropdown{
 		.event{
 			position: absolute;
 
+			.desc{
+				line-height: 18px;
+			}
+
 			&.left{
 				right: 50%;
 				text-align: right;
@@ -579,6 +583,28 @@ section.header_dropdown{
 				padding-top: 5px;
 				padding-bottom: 20px;
 			}	
+		}
+	}
+
+	.additional{
+		margin-top: 40px;
+		border-top: solid 1px $orange;
+		padding-top: 30px;
+
+		.icon{
+			position: absolute;
+		}
+
+		.ad_title{
+			font-family: 'Arimo', sans-serif;
+			margin-left: 40px;
+			font-weight: 700;
+			margin-bottom: 8px;
+		}
+
+		.ad_content{
+			margin-left: 40px;
+			line-height: 20px;
 		}
 	}
 }
