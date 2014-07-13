@@ -1,6 +1,11 @@
 function initialize () {
 	$(document).foundation();
 
+	var md = new MobileDetect(window.navigator.userAgent);
+    if (!md.mobile()) {
+		$(".section").addClass("noMobile");
+	}
+
 	attachClick( ".logo" , "#home" );
 	attachClick( ".home_link" , "#home" );
 	attachClick( ".programme_link" , "#programme" );
