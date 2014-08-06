@@ -23,6 +23,9 @@ function initialize () {
 		$(".header_dropdown").toggleClass('showmenu');
 		return false; //Prevent Default and event bubbling.
 	});
+
+	attachMore();
+	attachLess();
 }
 
 function attachClick( source_class, target_id ){
@@ -45,5 +48,25 @@ function attachClick( source_class, target_id ){
 	$( source_class ).mouseup(function()
 	{
 		$( this ).find('a').removeClass('click');
+	});
+}
+
+function attachMore(){
+	$( '.relator_desc_more_butt' ).bind("click", function() 
+	{
+		$(this).next().show();
+		$(this).prev().hide();
+		$(this).hide();
+		$(this).parent().find('.relator_desc_more_less').show();
+	});
+}
+
+function attachLess(){
+	$( '.relator_desc_more_less' ).bind("click", function() 
+	{
+		$(this).prev().hide();
+		$(this).hide();
+		$(this).parent().find('.relator_desc_more_butt').show();
+		$(this).parent().find('.relator_desc_more_butt').prev().show();
 	});
 }
