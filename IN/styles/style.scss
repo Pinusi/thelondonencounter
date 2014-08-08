@@ -383,13 +383,25 @@ section.header_dropdown{
 	.title{
 		font-size: 53px;
 		line-height: 60px;
-		margin-bottom: 31px;
+		margin-bottom: 20px;
 		font-family: 'Arimo', sans-serif;
 		text-transform: uppercase;
 		font-weight: 700;
 		@media ( max-width: 640px ){
 			font-size: 43px;
 			line-height: 48px;
+		}
+	}
+
+	.subtitle{
+		font-family: 'Arimo', sans-serif;
+		font-weight: 700;
+		font-size: 30px;
+		margin-bottom: 40px;
+		line-height: 35px;
+		@media ( max-width: 640px ){
+			font-size: 26px;
+			line-height: 28px;
 		}
 	}
 
@@ -638,6 +650,10 @@ section.header_dropdown{
 		font-size: 12px;
 		line-height: 14px;
 
+		.relator{
+			margin-bottom: 15px;
+		}
+
 		.rel_title{
 			font-family: 'Arimo', sans-serif;
 			font-weight: bold;
@@ -782,12 +798,22 @@ section.header_dropdown{
 	.sponsors{
 		margin-top: 40px;
 		text-align: center;
+		border-top: solid 1px $orange;
+		padding-top: 40px;
+
+		.sponsors_title{
+			text-align: left;
+			margin-bottom: 10px;
+			font-family: 'Arimo', sans-serif;
+			font-weight: 800;
+			font-size: 20px;
+		}
 
 		.golden {
 			margin-bottom: 50px;
 
 			img{
-				height: 80px;
+				height: 100px;
 			}
 		}
 
