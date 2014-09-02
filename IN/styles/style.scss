@@ -814,11 +814,39 @@ section.header_dropdown{
 
 			img{
 				height: 100px;
+
+				@media ( max-width: 420px ){
+					padding-right: 10px;
+					padding-left: 10px;
+					width: 100%;
+					height: auto;
+				}
 			}
 		}
 
 		.bronze img{
-			height: 35px;
+			height: 40px;
+			margin-right: 50px;
+
+			&.no_margin{
+				margin-right: 0px;
+			}
+
+			@media ( max-width: 420px ){
+				width:50%;
+				height:auto;
+				margin:0px;
+				margin-bottom:20px;
+				display: inline;
+			}
+		}
+
+		.bronze a{
+			@media ( max-width: 420px ){
+				width: 100%;
+				text-align: center;
+				display: block;
+			}
 		}
 	}
 
