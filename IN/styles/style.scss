@@ -63,7 +63,7 @@ body{
 	height: 75px;
 	margin-left: -85px;
 	background-color: $orange;
-	z-index: 2;
+	z-index: 3;
 	border-radius: 2px;
 	border-radius: 4px;
 	top: -10px;
@@ -117,7 +117,7 @@ nav.header{
 	width: 100%;
 	position: fixed;
 	top: 0px;
-	z-index: 1;
+	z-index: 2;
 	border-top: solid 1px $orange;
 	border-bottom: 1px solid #eeefec;
 
@@ -173,6 +173,7 @@ nav.header{
 	}
 
 	ul{
+		margin-bottom: 0px;
 		&.left{
 			margin-left: 90px;
 
@@ -254,6 +255,75 @@ nav.header{
 				color: $dark-grey;
 			}
 		}
+	}
+}
+
+/*Submenu*/
+.submenu{
+	margin: 0px;
+	position: fixed;
+	top: 60px;
+	width: 100%;
+	background-color: $orange;
+	z-index: 1;
+	padding: 7px 0px;
+	opacity: 0;
+	-webkit-transform: translate3d(0px,-100%,0px);
+	transform: translate3d(0px,-100%,0);
+	-webkit-transition: all 400ms cubic-bezier(0.08,.36,.04,1);
+	transition: all 400ms cubic-bezier(0.08,.36,.04,1);
+
+	&.showmenu{
+		opacity: 1;
+		-webkit-transform: translate3d(0px,0px,0px);
+		transform: translate3d(0px,0px,0px);
+	}
+
+	li{
+		list-style: none;
+	}
+
+	.triangle-left {
+		width: 0;
+		height: 0;
+		border-top: 12px solid transparent;
+		border-right: 10px solid #000;
+		border-bottom: 12px solid transparent;
+		display: block;
+		float: left;
+	}
+
+	.triangle-right {
+		width: 0;
+		height: 0;
+		border-top: 12px solid transparent;
+		border-left: 10px solid #000;
+		border-bottom: 12px solid transparent;
+		display: block;
+		float: left;
+	}
+
+	.triangle_year{
+		background-color: #000;
+		color: #fff;
+		display: block;
+		line-height: 14px;
+		font-size: 11px;
+		padding: 5px;
+		vertical-align: top;
+		float: left;
+	}
+
+	.triangle_line{
+		float: left;
+		height: 12px;
+		border-bottom: solid 1px #000;
+		display: block;
+		width: 100px;
+	}
+
+	@media ( max-width: 640px ){
+		display: none;
 	}
 }
 
@@ -357,7 +427,7 @@ section.header_dropdown{
 
 /*Sections*/
 #home{
-	background-image: url("../imgs/home_bg.png");
+	background-image: url("../imgs/home_bg.jpg");
 
 	@media ( max-width: 640px ){
 		.content{
@@ -402,6 +472,14 @@ section.header_dropdown{
 		@media ( max-width: 640px ){
 			font-size: 26px;
 			line-height: 28px;
+		}
+		&.subtitle_editions{
+			font-size: 53px;
+			line-height: 60px;
+			@media ( max-width: 640px ){
+				font-size: 43px;
+				line-height: 48px;
+			}
 		}
 	}
 

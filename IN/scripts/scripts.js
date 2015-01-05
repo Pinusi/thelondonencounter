@@ -6,7 +6,7 @@ function initialize () {
 		$(".section").addClass("noMobile");
 	}
 
-	attachClick( ".logo" , "#home" );
+	// attachClick( ".logo" , "#home" );
 	attachClick( ".home_link" , "#home" );
 	attachClick( ".programme_link" , "#programme" );
 	attachClick( ".talks_link" , "#talks" );
@@ -26,12 +26,23 @@ function initialize () {
 
 	attachMore();
 	attachLess();
+
+	attachSubmenu( ".editions_link",".editions_submenu" );
 }
 
 function attachClick( source_class, target_id ){
 	$( source_class ).bind("click", function() 
 	{
-		$(window).scrollTop($( target_id ).offset().top);
+		// document.location.href = "/";
+		if( document.location.href === "/" ){
+			document.location.href = "/";
+			setTimeout(function(){
+				$(window).scrollTop($( target_id ).offset().top);
+			}, 0);
+		}
+		else{
+			$(window).scrollTop($( target_id ).offset().top);
+		}
 
 		if($(".header_dropdown").is(":visible") ){
 			$(".header_dropdown").toggleClass('showmenu');
@@ -69,4 +80,24 @@ function attachLess(){
 		$(this).parent().find('.relator_desc_more_butt').show();
 		$(this).parent().find('.relator_desc_more_butt').prev().show();
 	});
+}
+
+function attachSubmenu( source_class, target_sub ){
+	$( source_class ).bind("click", function() 
+	{
+		if($( target_sub ).is(":visible") ){
+			$( target_sub ).toggleClass('showmenu');
+		}
+
+		return false; //Prevent Default and event bubbling.
+	});
+
+	var clickinside = $( target_sub );
+
+	$(document).on('click', function(e) {
+        if (!clickinside.is(e.target) && clickinside.has(e.target).length === 0) 
+        {
+            $( target_sub ).removeClass('showmenu');
+        }
+    });
 }
