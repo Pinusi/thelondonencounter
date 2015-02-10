@@ -1,0 +1,209 @@
+.sponsors{
+	background-image: url("../imgs/sponsors_bg.png");
+	color: $dark-grey;
+
+	p{
+		font-size: 15px;
+		line-height: 21px; 
+	}
+
+	.donate{
+		width: 100%;
+		text-align: center;
+	}
+
+	.sponsors{
+		margin-top: 40px;
+		text-align: center;
+		border-top: solid 1px $orange;
+		padding-top: 40px;
+
+		.sponsors_title{
+			text-align: left;
+			margin-bottom: 10px;
+			font-family: 'Arimo', sans-serif;
+			font-weight: 800;
+			font-size: 20px;
+		}
+
+		.golden {
+			margin-bottom: 50px;
+
+			img{
+				height: 100px;
+
+				@media ( max-width: 420px ){
+					padding-right: 10px;
+					padding-left: 10px;
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		.bronze img{
+			height: 40px;
+			margin-right: 50px;
+
+			&.no_margin{
+				margin-right: 0px;
+			}
+
+			@media ( max-width: 420px ){
+				width:50%;
+				height:auto;
+				margin:0px;
+				margin-bottom:20px;
+				display: inline;
+			}
+		}
+
+		.bronze a{
+			@media ( max-width: 420px ){
+				width: 100%;
+				text-align: center;
+				display: block;
+			}
+		}
+	}
+
+	/*.sponsor{
+		width: 200px;
+		height: 200px;
+		display: inline-block;
+		position: relative;
+		margin-right: 10px;
+
+		.sponsor_bg{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 1;
+			background-size: cover;
+			background-position: 50%;
+		}
+
+		.sponsor_overlay{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			display: block;
+			background-color: $black;
+			z-index: 2;
+			opacity: 0.4;
+
+			&:hover{
+				opacity: 0.5;
+			};
+		}
+	}*/
+}#sponsors{
+	background-image: url("../imgs/sponsors_bg.png");
+	color: $dark-grey;
+
+	p{
+		font-size: 15px;
+		line-height: 21px; 
+	}
+
+	.donate{
+		width: 100%;
+		text-align: center;
+	}
+
+	.sponsors{
+		margin-top: 40px;
+		text-align: center;
+		border-top: solid 1px $orange;
+		padding-top: 40px;
+
+		.sponsors_title{
+			text-align: left;
+			margin-bottom: 10px;
+			font-family: 'Arimo', sans-serif;
+			font-weight: 800;
+			font-size: 20px;
+		}
+
+		.golden {
+			margin-bottom: 50px;
+
+			img{
+				height: 100px;
+
+				@media ( max-width: 420px ){
+					padding-right: 10px;
+					padding-left: 10px;
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		.bronze img{
+			height: 40px;
+			margin-right: 50px;
+
+			&.no_margin{
+				margin-right: 0px;
+			}
+
+			@media ( max-width: 420px ){
+				width:50%;
+				height:auto;
+				margin:0px;
+				margin-bottom:20px;
+				display: inline;
+			}
+		}
+
+		.bronze a{
+			@media ( max-width: 420px ){
+				width: 100%;
+				text-align: center;
+				display: block;
+			}
+		}
+	}
+
+	/*.sponsor{
+		width: 200px;
+		height: 200px;
+		display: inline-block;
+		position: relative;
+		margin-right: 10px;
+
+		.sponsor_bg{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 1;
+			background-size: cover;
+			background-position: 50%;
+		}
+
+		.sponsor_overlay{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			display: block;
+			background-color: $black;
+			z-index: 2;
+			opacity: 0.4;
+
+			&:hover{
+				opacity: 0.5;
+			};
+		}
+	}*/
+}

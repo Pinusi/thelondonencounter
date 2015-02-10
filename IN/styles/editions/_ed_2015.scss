@@ -1,0 +1,7 @@
+$ed-2015-folder: "../imgs/ed_2015";
+
+.ed_2015{
+	.home{
+		background-image: url(#{$ed-2015-folder}/home_bg.jpg);
+	}
+}

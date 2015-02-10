@@ -11,7 +11,8 @@ module.exports = function(grunt) {
     //Cartelle
     cartelle: {
       development: 'IN',
-      distribution: 'OUT'
+      distribution: 'OUT',
+      temporary: '.tmp'
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -23,8 +24,13 @@ module.exports = function(grunt) {
               livereload: true
           }
       },
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
+      },
       gruntfile: {
-          files: ['Gruntfile.js']
+          files: ['Gruntfile.js'],
+          tasks: ['build']
       },
       compass: {
           files: ['<%= cartelle.development %>/styles/{,*/}*.{scss,sass}'],
@@ -35,7 +41,7 @@ module.exports = function(grunt) {
           tasks: ['cssmin']
       },
       other:{
-        files: ['<%= cartelle.development %>*.{ico,png,txt}',
+        files: ['<%= cartelle.development %>{,*/}*.{ico,png,txt,jpg}',
                 '<%= cartelle.development %>/{,*/}*.html',
                 '<%= cartelle.development %>styles/fonts/{,*/}*.*'],
         tasks: ['copy']
@@ -71,9 +77,21 @@ module.exports = function(grunt) {
       }
     },
 
-    wiredep: {
-      target: {
-        src: 'IN/index.html' // point to your HTML file.
+    // wiredep: {
+    //   target: {
+    //     src: 'IN/index.html' // point to your HTML file.
+    //   }
+    // },
+
+    bower_concat: {
+      all: {
+        dest: '<%= cartelle.temporary %>/scripts/bower.js',
+        exclude: [
+          'fastclick'
+        ],
+        dependencies: {
+          'foundation': ['jquery']
+        }
       }
     },
 
@@ -97,7 +115,7 @@ module.exports = function(grunt) {
     compass: {
         options: {
             sassDir: '<%= cartelle.development %>/styles',
-            cssDir: '.tmp/styles',
+            cssDir: '<%= cartelle.temporary %>/styles',
             generatedImagesDir: '<%= cartelle.development %>/imgs',
             imagesDir: '<%= cartelle.development %>/imgs',
             javascriptsDir: '<%= cartelle.development %>/scripts',
@@ -171,6 +189,10 @@ module.exports = function(grunt) {
       build: {
         src: '<%= cartelle.development %>/scripts/scripts.js',
         dest: '<%= cartelle.distribution %>/scripts/scripts.min.js'
+      },
+      bower: {
+        src: '<%= cartelle.temporary %>/scripts/bower.js',
+        dest: '<%= cartelle.distribution %>/scripts/bower.min.js'
       }
     },
 
@@ -213,11 +235,11 @@ module.exports = function(grunt) {
         'clean',
         'jshint',
         'concurrent',
+        'bower_concat',
         'uglify',
         'concat',
         'cssmin',
-        'copy',
-        'wiredep'
+        'copy'
     ]);
 
   // Default task(s).

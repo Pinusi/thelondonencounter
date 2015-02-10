@@ -1,0 +1,31 @@
+.location{
+	background-image: url("../imgs/location_bg.png");
+	color: $white;
+	text-align: right;
+	word-break: break-word;
+	font-family: 'Droid Serif', serif;
+	line-height: 22px;
+
+	.sub_title{
+		font-size: 30px;
+		line-height: 35px;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		font-family: 'Arimo', sans-serif;
+		font-weight: bold;
+	}
+
+	a img{
+		padding-bottom: 20px;
+	}
+
+	.mail {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		font-family: 'Droid Serif', serif;
+
+		a{
+			color: $white;
+		}
+	}
+}

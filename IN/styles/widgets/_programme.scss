@@ -1,0 +1,188 @@
+.programme{
+	background-image: url("../imgs/programme_bg.png");
+	color: $dark-grey;
+
+	.tree{
+		position: relative;
+		height: 370px;
+		width: 100%;
+		top: 35px;
+
+		.central_pillar{
+			background-color: $orange;
+			width: 1px;
+			height: 299px;
+			left: 50%;
+			position: absolute;
+			margin-top: 17px;
+		}
+
+		.event{
+			position: absolute;
+
+			.desc{
+				line-height: 18px;
+			}
+
+			&.left{
+				right: 50%;
+				text-align: right;
+				padding-top: 30px;
+				margin-right: 99px;
+
+				.time_line{
+					right: -100px;
+					top: -22px;
+				}
+
+				.hour{
+					top: -25px;
+					right: 0px;
+				}
+
+				.icon{
+					right: -33px;
+					top: -21px;
+				}				
+			}
+
+			&.right{
+				left: 50%;
+				text-align: left;
+				padding-top: 30px;
+				margin-left: 100px;
+
+				.time_line{
+					left: -100px;
+					top: -22px;
+				}
+
+				.hour{
+					top: -25px;
+					left: 0px;
+				}
+
+				.icon{
+					left: -33px;
+					top: -21px;
+				}
+			}
+		}
+
+		.event_rel{
+			position: relative;
+		}
+
+		.hour{
+			font-family: 'Arimo', sans-serif;
+			font-weight: bold;
+			font-size: 20px;
+			position: absolute;
+		}
+
+		.icon{
+			position: absolute;
+		}
+
+		.time_line{
+			position: absolute;
+
+			.line{
+				height: 1px;
+				background-color: $orange;
+				width: 40px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.circle{
+				height: 10px;
+				width: 10px;
+				background-color: $orange;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				display: inline-block;
+			}
+		}
+
+		/*Single events*/
+		#event_1{
+			top: 9px;
+		}
+
+		#event_2{
+			top: 58px;
+		}
+
+		#event_3{
+			top: 190px;
+		}
+
+		#event_4{
+			top: 210px;
+		}
+
+		#event_5{
+			top: 270px;
+		}
+
+		#event_6{
+			top: 299px;
+		}
+
+		/*Mobile version*/
+
+		ul{
+			margin: 0px;
+			list-style: none;
+		}
+
+		.tree_header{
+			border-bottom: solid 1px $orange;
+		}
+
+		@media (max-width: 640px) {
+			height: auto;
+
+			.hour, .icon{
+				position: initial;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.icon{
+				margin-right: 15px;
+			}
+
+			.desc{
+				margin-left: 37px;
+				line-height: 20px;
+				padding-top: 5px;
+				padding-bottom: 20px;
+			}	
+		}
+	}
+
+	.additional{
+		margin-top: 40px;
+		border-top: solid 1px $orange;
+		padding-top: 30px;
+
+		.icon{
+			position: absolute;
+		}
+
+		.ad_title{
+			font-family: 'Arimo', sans-serif;
+			margin-left: 40px;
+			font-weight: 700;
+			margin-bottom: 8px;
+		}
+
+		.ad_content{
+			margin-left: 40px;
+			line-height: 20px;
+		}
+	}
+}

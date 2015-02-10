@@ -1,0 +1,58 @@
+.exibitions{
+	background-image: url("../imgs/exibitions_bg.png");
+	color: $dark-grey;
+	text-align: center;
+
+	.sub_title{
+		font-size: 25px;
+		line-height: 30px;
+		margin-bottom: 20px;
+		font-family: 'Arimo', sans-serif;
+		font-weight: bold;
+	}
+
+	.sub_content{
+		line-height: 17px;
+		font-size: 13px;
+		font-family: 'Droid Serif', serif;
+	}
+
+	.fixed_height{
+		height: 481px;
+	}
+
+	.orange_line{
+		border-right: solid 1px $orange;
+	}
+
+	.link{
+		margin-top: 20px;
+
+		a{
+			color: $dark-grey
+		}
+
+		div{
+			font-size: 11px;
+			color: $dark-grey
+		}
+	}
+
+	@media ( max-width: 640px ){
+		.orange_line{
+			border-right: none;
+
+			.sub_content{
+				border-bottom: solid 1px $orange;
+				margin-bottom: 10px;
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.fixed_height{
+			height: auto;
+		}
+	}
+
+}

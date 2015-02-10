@@ -1,0 +1,43 @@
+.title{
+		font-size: 59px;
+		line-height: 64px;
+		margin-bottom: 30px;
+		word-break: break-word;
+
+		@media ( max-width: 640px ){
+			font-size: 47px;
+		}
+	}
+
+.content{
+	margin-top: 80px;
+	font-family: 'Droid Serif', serif;
+
+	@media ( max-width: 640px ){
+		margin-top: 40px;
+	}
+}
+
+.section{
+	width: 100%;
+	position: relative;
+	z-index: 0;
+	padding-bottom: 100px;
+
+	@media ( max-width: 640px ){
+		padding-bottom: 50px;
+	}
+
+	&.noMobile{
+		background-attachment: fixed;
+	}
+	
+	background-repeat: repeat;
+
+	&.with-image{
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+}

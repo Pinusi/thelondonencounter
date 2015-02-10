@@ -13,469 +13,456 @@
 	<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-	<!-- bower:js -->
-	<script src="bower_components/modernizr/modernizr.js"></script>
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/fastclick/lib/fastclick.js"></script>
-	<script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
-	<script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
-	<script src="bower_components/foundation/js/foundation.js"></script>
-	<!-- endbower -->
-
-	<script src="bower_components/mobile-detect/mobile-detect.js"></script>
-	<script src="bower_components/mobile-detect/mobile-detect-modernizr.js"></script>
-
+	<script src="scripts/bower.min.js"></script>
 	<script src="scripts/scripts.min.js"></script>
-	<script>
-		$(document).ready(function($) {
-			initialize();
-		});
-	</script>
 </head>
 <body>
-	<a href="../index.html" class="logo">
-		<!-- <div class="logo"> -->
-			<div class="logo_img"></div>
-			<div class="logo_tablet"></div>
-		<!-- </div> -->
-	</a>
-	<nav class="header">
-		<div class="wrapper">
-  			<div class="row">
-  				<div class="large-6 medium-6 columns hide-for-small-only left">
-					<ul class="right">
-						<li><a href="#" class="exibitions_link">Exhibitions</a></li>
-				      	<li><a href="#" class="talks_link">Talks</a></li>
-				      	<li><a href="#" class="programme_link">Programme</a></li>    	
-					</ul>
-				</div>
-				<div class="large-6 medium-6 hide-for-small-only columns">
-					<ul  class="left">
-				      	<li><a href="#" class="location_link">Location</a></li>
-				      	<li><a href="#" class="sponsors_link">Organisers</a></li>
-				      	<!-- <li><a href="#" class="editions_link">Editions</a></li> -->
-				      	<li>
-				      		<a href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook.png"/></a>
-				      		<a href="https://twitter.com/LondonEncounter"><img src="imgs/twitter.png"/></a>
-				      	</li>
-					</ul>
-				</div>
-				<div class="small-12 show-for-small-only">
-					<div class="logo_mobile"></div>
-					<div class="sandwich">
-						<div class="sandwich_rel">
-							<span class="b1"></span>
-							<span class="b2"></span>
-							<span class="b3"></span>
+	<div class="ed_2015">
+		<a href="../index.html" class="logo">
+			<!-- <div class="logo"> -->
+				<div class="logo_img"></div>
+				<div class="logo_tablet"></div>
+			<!-- </div> -->
+		</a>
+		<nav class="header">
+			<div class="wrapper">
+	  			<div class="row">
+	  				<div class="large-6 medium-6 columns hide-for-small-only left">
+						<ul class="right">
+							<li><a href="#" class="exibitions_link">Exhibitions</a></li>
+					      	<li><a href="#" class="talks_link">Talks</a></li>
+					      	<li><a href="#" class="programme_link">Programme</a></li>    	
+						</ul>
+					</div>
+					<div class="large-6 medium-6 hide-for-small-only columns">
+						<ul  class="left">
+					      	<li><a href="#" class="location_link">Location</a></li>
+					      	<li><a href="#" class="sponsors_link">Organisers</a></li>
+					      	<li><a href="/edition_2014.html">Past Edition</a></li> <!--class="editions_link"-->
+					      	<!-- <li>
+					      		<a href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook.png"/></a>
+					      		<a href="https://twitter.com/LondonEncounter"><img src="imgs/twitter.png"/></a>
+					      	</li> -->
+						</ul>
+					</div>
+					<div class="small-12 show-for-small-only">
+						<div class="logo_mobile"></div>
+						<div class="sandwich">
+							<div class="sandwich_rel">
+								<span class="b1"></span>
+								<span class="b2"></span>
+								<span class="b3"></span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
 
-	<ul class="editions_submenu submenu">
-		<li>
-			<a href="../edition_2014.html">
-				<span class="triangle_line"></span>
-				<span class="triangle-left"></span>
-				<span class="triangle_year">2014</span>
-				<span class="triangle-right"></span>
-			</a>
-		</li>
-		<!-- <li>
-			<a href="#">
-				<span class="triangle_line"></span>
-				<span class="triangle-left"></span>
-				<span class="triangle_year">2014</span>
-				<span class="triangle-right"></span>
-			</a>
-		</li> -->
-	</ul>
+		<ul class="editions_submenu submenu">
+			<li>
+				<a href="../edition_2014.html">
+					<span class="triangle_line"></span>
+					<span class="triangle-left"></span>
+					<span class="triangle_year">2014</span>
+					<span class="triangle-right"></span>
+				</a>
+			</li>
+			<!-- <li>
+				<a href="#">
+					<span class="triangle_line"></span>
+					<span class="triangle-left"></span>
+					<span class="triangle_year">2014</span>
+					<span class="triangle-right"></span>
+				</a>
+			</li> -->
+		</ul>
 
-	<!--Menu Mobile-->
-	<section class="header_dropdown">
-		<div class='close'>
-			<div class='close_inside'>
-				<span class="b1"></span>
-				<span class="b2"></span>
-				<span class="b3"></span>
+		<!--Menu Mobile-->
+		<section class="header_dropdown">
+			<div class='close'>
+				<div class='close_inside'>
+					<span class="b1"></span>
+					<span class="b2"></span>
+					<span class="b3"></span>
+				</div>
 			</div>
-		</div>
-	    <ul>
-	    	<li class="home_link"><a href="#">Home</a></li>
-	      	<li class="programme_link"><a href="#">Programme</a></li>
-	      	<li class="talks_link"><a href="#">Talks</a></li>
-	      	<li class="exibitions_link"><a href="#">Exhibitions</a></li>
-	      	<li class="location_link"><a href="#">Location</a></li>
-	      	<li class="sponsors_link"><a href="#">Organizers</a></li>
-	      	<li class="sponsors_link"><a href="#">Editions</a></li>
-	    </ul>
-	</section>
-	<!--END Menu Mobile-->
+		    <ul>
+		    	<li class="home_link"><a href="#">Home</a></li>
+		      	<li class="programme_link"><a href="#">Programme</a></li>
+		      	<li class="talks_link"><a href="#">Talks</a></li>
+		      	<li class="exibitions_link"><a href="#">Exhibitions</a></li>
+		      	<li class="location_link"><a href="#">Location</a></li>
+		      	<li class="sponsors_link"><a href="#">Organizers</a></li>
+		      	<li class="sponsors_link"><a href="#">Editions</a></li>
+		    </ul>
+		</section>
+		<!--END Menu Mobile-->
 
-	<!--Home-->
-  	<div id="home" class='section with-image'>
-  		<div class="wrapper">
-  			<div class="row">
-  				<div class="large-6 medium-6 hide-for-small-only columns">
-  					<div class="content">
-  						<div class="logo_big"></div>
-  					</div>
-  				</div>
-  				<div class="large-6 medium-6 small-12 columns">
-					<div class="content">
-						<p class="title">the london encounter</p>
-						<p class="subtitle">A Passion for Reality</p>
-						<p class="date">06.06.2015</p>
-						<p class="where">155 BISHOPSGATE</p>
-						<p>The London Encounter is a cultural event involving exhibitions, presentations and discussions which, each in their own way, are intended to provoke us to ask: what do we truly desire, what are we living for, and how can we best face the challenges of life?</p>
-						<p>It is a place of dialogue for people of all backgrounds and experiences.</p> 
-						<p>Entrance is free.</p>
-						<p>Children welcome.</p>
-					</div>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
-  	<!--END Home-->
-
-  	<!--Programme-->
-  	<div id="programme" class='section'>
-  		<div class="wrapper">
-  			<div class="row">
-		  		<div class="large-12 medium-12 small-12 columns">
-		  			<div class="content">
-		  				<div class="title">programme</div>
-
-		  				<!--Begin of tree-->
-		  				<div class='tree hide-for-small-only'>
-		  					<div class='central_pillar'></div>
-		  					<div class='event left'>
-		  						<div class='event_rel'>
-		  							<div class="time_line">
-		  								<span class='circle'></span>
-			  							<span class='line'></span>
-		  							</div>
-			  						<div class='hour'>10:30</div>
-			  						<div class='icon'><i class="fa fa-play fa-lg"></i></div> 
-			  						<div class='desc'>Doors Open.</div>
-			  					</div>
-		  					</div>
-
-		  					<div class='event right long_hour' id='event_1'>
-		  						<div class='event_rel'>
-		  							<div class="time_line">
-		  								<span class='line'></span>
-		  								<span class='circle'></span>
-		  							</div>
-			  						<div class='hour'>11:00</div>
-			  						<div class='icon'><i class="fa fa-microphone fa-lg"></i></div> 
-			  						<div class='desc'>Introduction.</div>
-			  					</div>
-		  					</div>
-
-		  					<div class='event left long_hour' id='event_2'>
-		  						<div class='event_rel'>
-		  							<div class="time_line">
-		  								<span class='circle'></span>
-			  							<span class='line'></span>
-		  							</div>
-			  						<div class='hour'>11:30</div>
-			  						<div class='icon'><i class="fa fa-microphone fa-lg"></i></div> 
-			  						<div class='desc'>Talk: Technology.</div>
-			  					</div>
-		  					</div>
-
-		  					<div class='event right long_hour' id='event_3'>
-		  						<div class='event_rel'>
-		  							<div class="time_line">
-			  							<span class='line'></span>
-			  							<span class='circle'></span>
-		  							</div>
-			  						<div class='hour'>14:30</div>
-			  						<div class='icon'><i class="fa fa-microphone fa-lg"></i></div> 
-			  						<div class='desc'>Talk: Charity.</div>
-			  					</div>
-		  					</div>
-
-		  					<div class='event left long_hour' id='event_4'>
-		  						<div class='event_rel'>
-		  							<div class="time_line">
-		  								<span class='circle'></span>
-			  							<span class='line'></span>
-		  							</div>
-			  						<div class='hour'>18:30</div>
-			  						<div class='icon'><i class="fa fa-music fa-lg"></i></div> 
-			  						<div class='desc'>Rock music.</div>
-			  					</div>
-		  					</div>
-
-		  					<div class='event left' id='event_6'>
-		  						<div class='event_rel'>
-		  							<div class="time_line">
-		  								<span class='circle'></span>
-			  							<span class='line'></span>
-		  							</div>
-			  						<div class='hour'>22:30</div>
-			  						<div class='icon'><i class="fa fa-pause fa-lg"></i></div> 
-			  						<div class='desc'>The London Encounter closes.</div>
-			  					</div>
-		  					</div>
-		  				</div>
-
-		  				<!--Tree Mobile-->
-		  				<div class='tree show-for-small-only'>
-		  					<ul>
-		  						<li>
-		  							<div class='tree_header'>
-		  								<div class='icon'><i class="fa fa-play fa-lg"></i></div>
-		  								<div class='hour'>10:30</div>
-			  						</div>
-			  						<div class='desc'>Doors Open.</div>
-		  						</li>
-		  						<li>
-		  							<div class='tree_header'>
-		  								<div class='icon'><i class="fa fa-microphone fa-lg"></i></div>
-		  								<div class='hour'>11:00</div>
-			  						</div> 
-			  						<div class='desc'>Introduction.</div>
-		  						</li>
-		  						<li>
-		  							<div class='tree_header'>
-		  								<div class='icon'><i class="fa fa-microphone fa-lg"></i></div>
-		  								<div class='hour'>11:30</div>
-			  						</div>
-			  						<div class='desc'>Talk: Charity.</div>
-		  						</li>
-		  						<li>
-		  							<div class='tree_header'>
-		  								<div class='icon'><i class="fa fa-microphone fa-lg"></i></div>
-		  								<div class='hour'>14:30</div>
-			  						</div> 
-			  						<div class='desc'>Talk: Technology.</div>
-		  						</li>
-		  						<li>
-		  							<div class='tree_header'>
-		  								<div class='icon'><i class="fa fa-music fa-lg"></i></div> 
-		  								<div class='hour'>19:30</div>
-		  							</div>
-			  						<div class='desc'>Concert </div>
-		  						</li>
-		  						<li>
-		  							<div class='tree_header'>
-		  								<div class='icon'><i class="fa fa-pause fa-lg"></i></div>
-			  							<div class='hour'>22:30</div>
-			  						</div>
-			  						<div class='desc'>The London Encounter closes.</div>
-		  						</li>
-		  					</ul>
-		  				</div>
-		  				<!--END Tree Mobile-->
-
-		  				<!--Food-->
-		  				<!-- <div class="additional">
-		  					<div class='icon'><i class="fa fa-cutlery fa-lg"></i></div> 
-		  					<div class="ad_title">Food  & Beverages</div>
-		  					<div class="ad_content">A selection of sandwiches and light snacks (including speciality Italian cured meats & cheese) will be available to purchase at the venue. A bar serving alcoholic drinks, teas and coffees will also be open.</div>
-		  				</div> -->
-
-		  				<div class="additional">
-		  					<div class='icon'><i class="fa fa-users fa-lg"></i></div> 
-		  					<div class="ad_title">Exhibitions</div>
-		  					<div class="ad_content">Guided tours of exhibition throughout the day.</div>
-		  				</div> 
-
-		  				<!-- <div class="additional">
-		  					<div class='icon'><i class="fa fa-child fa-lg"></i></div> 
-		  					<div class="ad_title">Children</div>
-		  					<div class="ad_content">There will be a room for children and games and events will be organised for them. However parents will retain responsibility for their children throughout the day.</div>
-		  				</div> -->
-
-		  			</div>
-		  		</div>
-		  	</div>
-		</div>
-  	</div>
-  	<!--END Programme-->
-
-  	<!--Talks-->
-  	<div id="talks" class='section with-image'>
-  		<div class="wrapper">
-  			<div class="row">
-		  		<div class="large-12 medium-12 small-12 columns">
-		  			<div class="content">
-		  				<div class="title">talks</div>
-		  			</div>
-		  		</div>
-		  		<div class="large-12 medium-12 small-12 columns">
-		  			<div class="talk_title large-3 medium-4 small-12 columns">Technology</div>
-		  			<div class="desc large-9 medium-8 small-12 columns">
-		  				<div>Like it or loathe it, technology has affected all of our lives. But how has it changed our own perception of reality?</div>
-		  			</div>
-		  		</div>
-		  		<div class="large-12 medium-12 small-12 columns">
-		  			<div class="talk_title large-3 medium-4 small-12 columns">Charity</div>
-		  			<div class="desc large-9 medium-8 small-12 columns">
-		  				<div>We may agree that charity is a virtue, and is surely a help to the recipient, but how does participation in charitable acts affect the participant?</div>
-		  				<!-- <div class='relators'>
-		  					<div class='rel_title'>Speakers:</div>
-		  					<div class='relator'>
-			  					<div class='relator_photo' style='background-image:url("imgs/speakers/frchristopher.jpg")'></div>
-				  				<div class='relator_name'>Fr. Christopher Jamison</div>
-					  			<div class='relator_desc'>
-					  				<span>Main</span>
-					  				<span> [...]</span>
-					  				<a class='relator_desc_more_butt'>show more</a> 
-						  			<span class='relator_desc_more' style='display:none;'>More</span>
-						  			<a class='relator_desc_more_less' style='display:none;'>show less</a>
-					  			</div>
-					  		</div>
-				  		</div> -->
-		  			</div>
-		  		</div>
-		  		<div class="large-12 medium-12 small-12 columns">
-		  			<div class="talk_title large-3 medium-4 small-12 columns">Rock music</div>
-		  			<div class="desc large-9 medium-8 small-12 columns">
-		  				<div>“What just happened?”. How many times have you surprised yourself by asking this question while listening to music? A change, a turn, a twist: during a song, in the bridge between verse 2 and 3, when skipping from track 7 to track 8, after the first few notes of the 4th studio album, in a brief instant of silence during a concert or an interview, where the frontman pauses to take in the surroundings, to hold a thought for one more moment… “What happened?”
-		  				</div>
-		  			</div>
-		  		</div>
-		  	</div>
-		</div>
-  	</div>
-  	<!--END Talks-->
-
-  	<!--Exibitions-->
-  	<div id="exibitions" class='section'>
-  		<div class="wrapper">
-  			<div class="row">
-		  		<div class="large-12 medium-12 small-12 columns">
-		  			<div class="content">
-  						<div class="title">exhibitions</div>
-  					</div>
-		  		</div>
-		  		<div class="large-6 medium-6 small-12 columns orange_line fixed_height">
-  					<div class="sub_title">Work.</div>
-  					<div class="sub_content">A reflection on the nature of work through the media of the works of the French painter Jean-Fran&#231;ois Millet and the writings of his compatriot, the philosopher Charles P&#233;guy.</div>
-		  		</div>
-		  		<div class="large-6 medium-6 small-12 columns fixed_height">
-  					<div class="sub_title">Oscar Wilde.</div>
-  					<div class="sub_content">An exhibition looking beyond the surface of one of the nineteenth century's greatest writers, examining his views on the correlation between themes of beauty and sorrow.</div>
-					<!-- <div class='link'>
-						<a target="blank" href="https://www.youtube.com/watch?v=WrMcEqxlsJY">
-							<i class="fa fa-video-camera fa-2x"></i>
-							<div>[Watch the video: "A dialogue with Newman"]</div>
-						</a>
-					</div> -->
-		  		</div>
-  			</div>
-  		</div>
-  	</div>
-  	<!--END Exibitions-->
-
-	<!--Location-->
-  	<div id="location" class='section with-image'>
-  		<div class="wrapper">
-  			<div class="row">
-		  		<div class="large-12 medium-12 small-12 columns">
-		  			<div class="content">
-		  				<div class="title">location</div>
-		  			</div>
-		  		</div>
-		  		<div class="large-4 medium-4 small-12 columns">
-  					<div class="sub_title">155 Bishopsgate</div>
-  					<div class="sub_content">155 Bishopsgate</br>EC2M 3YD</br>London</div>
-  					<div class="mail"><a href="mailto:info@thelondonencounter.co.uk">info@thelondonencounter.co.uk</a></div>
-  					<a href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook_white.png"/></a>
-				    <a href="https://twitter.com/LondonEncounter"><img src="imgs/twitter_white.png"/></a>
-		  		</div>
-		  		<div class="large-8 medium-8 small-12 columns">
-  					<div class="map_container">
-  						<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=155%20Bishopsgate%2C%20London%20EC2M%203YX%2C%20United%20Kingdom&key=AIzaSyAqPQHhd8JQMkYJ0pmoWOFmRje1Eq7jhuM"></iframe>
-  					</div>
-		  		</div>
-		  	</div>
-		</div>
-  	</div>
-  	<!--END Location-->
-
-  	<!--Sponsors-->
-  	<div id="sponsors" class='section'>
-  		<div class="wrapper">
-  			<div class="row">
-		  		<div class="large-12 medium-12 small-12 columns">
-		  			<div class="content">
-		  				<div class="title">organisers</div>
-		  				<p>The London Encounter is organised by a group of friends who met through the Catholic Movement, Communion and Liberation.</p>
-		  				<p>Our faith makes us want to engage in a dialogue with everyone, of whatever religion, background, political persuasion or tradition, about what it means to be human, what truly fulfils us and how best we can face the challenges of daily life. We believe that only by sharing our experience in a spirit of openness and mutual respect can we build the common good together</p>
-						<p>The London Encounter is organised through a charitable trust, Manalive, Charity number 1106302</p>
-						<div class='donate'>
-							<!--START BANNER: from http://www.btplc.com/mydonate/ -->
-							<a href="https://mydonate.bt.com/donation/donate.html?charity=manalive" target="_blank"><img src="https://mydonate.bt.com/images/promotional/buttons/charities/200x115/black/button-1.gif" border="0"></a>
-							<!--END BANNER: from http://www.btplc.com/mydonate/ -->
-						</div>
-
-						<!-- <div class='sponsors'>
-							<div class='sponsors_title'>Sponsored by:</div>
-							<div class="golden">
-								<a target="_blank" href='http://www.lambda-tek.com/'>
-									<img src="imgs/sponsors/lambdateck_logo.png">
-								</a>
-							</div>
-							<div class="bronze">
-								<a target="_blank" href='http://www.disource.co.uk/'>
-									<img src="imgs/sponsors/dsource.png">
-								</a>
-								<a target="_blank" href='http://www.good-works.org.uk/'>
-									<img src="imgs/sponsors/goodworks.png" class='no_margin' style='height: 60px;'>
-								</a>
-							</div>
-							<div class='sponsor'>
-								<div class='sponsor_bg' style='background-image:url("imgs/sponsors/lambdateck_bg.png")'></div>
-								<a href='http://www.lambda-tek.com/' class='sponsor_overlay'></a>
-								<div class='sponsor_logo' style='background-image:url("imgs/sponsors/lambdateck.png")'></div>
-							</div>
-							<div class='sponsor'>
-								<div class='sponsor_bg' style='background-image:url("imgs/sponsors/lambdateck_bg.png")'></div>
-								<a href='http://www.disource.co.uk/' class='sponsor_overlay'></a>
-								<div class='sponsor_logo' style='background-image:url("imgs/sponsors/lambdateck.png")'></div>
-							</div>
-						</div> -->
-		  			</div>
-		  		</div>
-		  	</div>
-		</div>
-  	</div>
-  	<!--END Sponsors-->
-
-  	<!--Footer-->
-  	<div class="footer">
-  		<div class="wrapper">
-  			<div class="row">
-  				<div class="large-5 medium-6 small-12 columns">
-  					<div class="left_container line">
-  						<div class="f_logo"></div>
-	  					<div class="f_date">06.06.2015</div>
-		  				<div class="f_where">155 BISHOPSGATE</div>
-		  			</div>
-  				</div>
-  				<div class="large-4 medium-4 small-12 columns gocentral">
-  					<div class="line">
-	  					<div class="f_trademark">&#174;the london encounter</div>
-	  					<div class="f_address">London - UK</div>
-	  					<div class="f_phone"><a href="mailto:info@thelondonencounter.co.uk">info@thelondonencounter.co.uk</a></div>
+		<!--Home-->
+	  	<div id="home" class='section with-image home'>
+	  		<div class="wrapper">
+	  			<div class="row">
+	  				<div class="large-6 medium-6 hide-for-small-only columns">
+	  					<div class="content">
+	  						<div class="logo_big"></div>
+	  					</div>
 	  				</div>
-  				</div>
-  				<div class="large-3 medium-2 small-12 columns gocentral">
-  					<div class="f_social">
-  						<p>FIND US ON:</p>
-  						<a target="_blank" href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook_foot.png"/></a>
-				      	<a target="_blank" href="https://twitter.com/LondonEncounter"><img src="imgs/twitter_foot.png"/></a>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
-  	<!--END Footer-->
+	  				<div class="large-6 medium-6 small-12 columns">
+						<div class="content">
+							<p class="title">the london encounter</p>
+							<p class="subtitle">A Passion for Reality</p>
+							<p class="date">06.06.2015</p>
+							<p class="where">155 BISHOPSGATE</p>
+							<p>The London Encounter is a cultural event involving exhibitions, presentations and discussions which, each in their own way, are intended to provoke us to ask: what do we truly desire, what are we living for, and how can we best face the challenges of life?</p>
+							<p>It is a place of dialogue for people of all backgrounds and experiences.</p> 
+							<p>Entrance is free.</p>
+							<p>Children welcome.</p>
+						</div>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<!--END Home-->
+
+	  	<!--Programme-->
+	  	<div id="programme" class='section programme'>
+	  		<div class="wrapper">
+	  			<div class="row">
+			  		<div class="large-12 medium-12 small-12 columns">
+			  			<div class="content">
+			  				<div class="title">programme</div>
+
+			  				<!--Begin of tree-->
+			  				<div class='tree hide-for-small-only'>
+			  					<div class='central_pillar'></div>
+			  					<div class='event left'>
+			  						<div class='event_rel'>
+			  							<div class="time_line">
+			  								<span class='circle'></span>
+				  							<span class='line'></span>
+			  							</div>
+				  						<div class='hour'>10:30</div>
+				  						<div class='icon'><i class="fa fa-play fa-lg"></i></div> 
+				  						<div class='desc'>Doors Open.</div>
+				  					</div>
+			  					</div>
+
+			  					<div class='event right long_hour' id='event_1'>
+			  						<div class='event_rel'>
+			  							<div class="time_line">
+			  								<span class='line'></span>
+			  								<span class='circle'></span>
+			  							</div>
+				  						<div class='hour'>11:00</div>
+				  						<div class='icon'><i class="fa fa-microphone fa-lg"></i></div> 
+				  						<div class='desc'>Introduction.</div>
+				  					</div>
+			  					</div>
+
+			  					<div class='event left long_hour' id='event_2'>
+			  						<div class='event_rel'>
+			  							<div class="time_line">
+			  								<span class='circle'></span>
+				  							<span class='line'></span>
+			  							</div>
+				  						<div class='hour'>11:30</div>
+				  						<div class='icon'><i class="fa fa-microphone fa-lg"></i></div> 
+				  						<div class='desc'>Talk: Technology.</div>
+				  					</div>
+			  					</div>
+
+			  					<div class='event right long_hour' id='event_3'>
+			  						<div class='event_rel'>
+			  							<div class="time_line">
+				  							<span class='line'></span>
+				  							<span class='circle'></span>
+			  							</div>
+				  						<div class='hour'>14:30</div>
+				  						<div class='icon'><i class="fa fa-microphone fa-lg"></i></div> 
+				  						<div class='desc'>Talk: Charity.</div>
+				  					</div>
+			  					</div>
+
+			  					<div class='event left long_hour' id='event_4'>
+			  						<div class='event_rel'>
+			  							<div class="time_line">
+			  								<span class='circle'></span>
+				  							<span class='line'></span>
+			  							</div>
+				  						<div class='hour'>18:30</div>
+				  						<div class='icon'><i class="fa fa-music fa-lg"></i></div> 
+				  						<div class='desc'>Rock music.</div>
+				  					</div>
+			  					</div>
+
+			  					<div class='event left' id='event_6'>
+			  						<div class='event_rel'>
+			  							<div class="time_line">
+			  								<span class='circle'></span>
+				  							<span class='line'></span>
+			  							</div>
+				  						<div class='hour'>22:30</div>
+				  						<div class='icon'><i class="fa fa-pause fa-lg"></i></div> 
+				  						<div class='desc'>The London Encounter closes.</div>
+				  					</div>
+			  					</div>
+			  				</div>
+
+			  				<!--Tree Mobile-->
+			  				<div class='tree show-for-small-only'>
+			  					<ul>
+			  						<li>
+			  							<div class='tree_header'>
+			  								<div class='icon'><i class="fa fa-play fa-lg"></i></div>
+			  								<div class='hour'>10:30</div>
+				  						</div>
+				  						<div class='desc'>Doors Open.</div>
+			  						</li>
+			  						<li>
+			  							<div class='tree_header'>
+			  								<div class='icon'><i class="fa fa-microphone fa-lg"></i></div>
+			  								<div class='hour'>11:00</div>
+				  						</div> 
+				  						<div class='desc'>Introduction.</div>
+			  						</li>
+			  						<li>
+			  							<div class='tree_header'>
+			  								<div class='icon'><i class="fa fa-microphone fa-lg"></i></div>
+			  								<div class='hour'>11:30</div>
+				  						</div>
+				  						<div class='desc'>Talk: Charity.</div>
+			  						</li>
+			  						<li>
+			  							<div class='tree_header'>
+			  								<div class='icon'><i class="fa fa-microphone fa-lg"></i></div>
+			  								<div class='hour'>14:30</div>
+				  						</div> 
+				  						<div class='desc'>Talk: Technology.</div>
+			  						</li>
+			  						<li>
+			  							<div class='tree_header'>
+			  								<div class='icon'><i class="fa fa-music fa-lg"></i></div> 
+			  								<div class='hour'>19:30</div>
+			  							</div>
+				  						<div class='desc'>Concert </div>
+			  						</li>
+			  						<li>
+			  							<div class='tree_header'>
+			  								<div class='icon'><i class="fa fa-pause fa-lg"></i></div>
+				  							<div class='hour'>22:30</div>
+				  						</div>
+				  						<div class='desc'>The London Encounter closes.</div>
+			  						</li>
+			  					</ul>
+			  				</div>
+			  				<!--END Tree Mobile-->
+
+			  				<!--Food-->
+			  				<!-- <div class="additional">
+			  					<div class='icon'><i class="fa fa-cutlery fa-lg"></i></div> 
+			  					<div class="ad_title">Food  & Beverages</div>
+			  					<div class="ad_content">A selection of sandwiches and light snacks (including speciality Italian cured meats & cheese) will be available to purchase at the venue. A bar serving alcoholic drinks, teas and coffees will also be open.</div>
+			  				</div> -->
+
+			  				<div class="additional">
+			  					<div class='icon'><i class="fa fa-users fa-lg"></i></div> 
+			  					<div class="ad_title">Exhibitions</div>
+			  					<div class="ad_content">Guided tours of exhibition throughout the day.</div>
+			  				</div> 
+
+			  				<!-- <div class="additional">
+			  					<div class='icon'><i class="fa fa-child fa-lg"></i></div> 
+			  					<div class="ad_title">Children</div>
+			  					<div class="ad_content">There will be a room for children and games and events will be organised for them. However parents will retain responsibility for their children throughout the day.</div>
+			  				</div> -->
+
+			  			</div>
+			  		</div>
+			  	</div>
+			</div>
+	  	</div>
+	  	<!--END Programme-->
+
+	  	<!--Talks-->
+	  	<div id="talks" class='section with-image talks'>
+	  		<div class="wrapper">
+	  			<div class="row">
+			  		<div class="large-12 medium-12 small-12 columns">
+			  			<div class="content">
+			  				<div class="title">talks</div>
+			  			</div>
+			  		</div>
+			  		<div class="large-12 medium-12 small-12 columns">
+			  			<div class="talk_title large-3 medium-4 small-12 columns">Technology</div>
+			  			<div class="desc large-9 medium-8 small-12 columns">
+			  				<div>Like it or loathe it, technology has affected all of our lives. But how has it changed our own perception of reality?</div>
+			  			</div>
+			  		</div>
+			  		<div class="large-12 medium-12 small-12 columns">
+			  			<div class="talk_title large-3 medium-4 small-12 columns">Charity</div>
+			  			<div class="desc large-9 medium-8 small-12 columns">
+			  				<div>We may agree that charity is a virtue, and is surely a help to the recipient, but how does participation in charitable acts affect the participant?</div>
+			  				<!-- <div class='relators'>
+			  					<div class='rel_title'>Speakers:</div>
+			  					<div class='relator'>
+				  					<div class='relator_photo' style='background-image:url("imgs/speakers/frchristopher.jpg")'></div>
+					  				<div class='relator_name'>Fr. Christopher Jamison</div>
+						  			<div class='relator_desc'>
+						  				<span>Main</span>
+						  				<span> [...]</span>
+						  				<a class='relator_desc_more_butt'>show more</a> 
+							  			<span class='relator_desc_more' style='display:none;'>More</span>
+							  			<a class='relator_desc_more_less' style='display:none;'>show less</a>
+						  			</div>
+						  		</div>
+					  		</div> -->
+			  			</div>
+			  		</div>
+			  		<div class="large-12 medium-12 small-12 columns">
+			  			<div class="talk_title large-3 medium-4 small-12 columns">Rock music</div>
+			  			<div class="desc large-9 medium-8 small-12 columns">
+			  				<div>"What just happened?". How many times have you surprised yourself by asking this question while listening to music? A change, a turn, a twist: during a song, in the bridge between verse 2 and 3, when skipping from track 7 to track 8, after the first few notes of the 4th studio album, in a brief instant of silence during a concert or an interview, where the frontman pauses to take in the surroundings, to hold a thought for one more moment... "What happened?"
+			  				</div>
+			  			</div>
+			  		</div>
+			  	</div>
+			</div>
+	  	</div>
+	  	<!--END Talks-->
+
+	  	<!--Exibitions-->
+	  	<div id="exibitions" class='section exibitions'>
+	  		<div class="wrapper">
+	  			<div class="row">
+			  		<div class="large-12 medium-12 small-12 columns">
+			  			<div class="content">
+	  						<div class="title">exhibitions</div>
+	  					</div>
+			  		</div>
+			  		<div class="large-6 medium-6 small-12 columns orange_line fixed_height">
+	  					<div class="sub_title">Work.</div>
+	  					<div class="sub_content">A reflection on the nature of work through the media of the works of the French painter Jean-Fran&#231;ois Millet and the writings of his compatriot, the philosopher Charles P&#233;guy.</div>
+			  		</div>
+			  		<div class="large-6 medium-6 small-12 columns fixed_height">
+	  					<div class="sub_title">Oscar Wilde.</div>
+	  					<div class="sub_content">An exhibition looking beyond the surface of one of the nineteenth century's greatest writers, examining his views on the correlation between themes of beauty and sorrow.</div>
+						<!-- <div class='link'>
+							<a target="blank" href="https://www.youtube.com/watch?v=WrMcEqxlsJY">
+								<i class="fa fa-video-camera fa-2x"></i>
+								<div>[Watch the video: "A dialogue with Newman"]</div>
+							</a>
+						</div> -->
+			  		</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<!--END Exibitions-->
+
+		<!--Location-->
+	  	<div id="location" class='section with-image location'>
+	  		<div class="wrapper">
+	  			<div class="row">
+			  		<div class="large-12 medium-12 small-12 columns">
+			  			<div class="content">
+			  				<div class="title">location</div>
+			  			</div>
+			  		</div>
+			  		<div class="large-4 medium-4 small-12 columns">
+	  					<div class="sub_title">155 Bishopsgate</div>
+	  					<div class="sub_content">155 Bishopsgate</br>EC2M 3YD</br>London</div>
+	  					<div class="mail"><a href="mailto:info@thelondonencounter.co.uk">info@thelondonencounter.co.uk</a></div>
+	  					<a href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook_white.png"/></a>
+					    <a href="https://twitter.com/LondonEncounter"><img src="imgs/twitter_white.png"/></a>
+			  		</div>
+			  		<div class="large-8 medium-8 small-12 columns">
+	  					<div class="map_container">
+	  						<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=155%20Bishopsgate%2C%20London%20EC2M%203YX%2C%20United%20Kingdom&key=AIzaSyAqPQHhd8JQMkYJ0pmoWOFmRje1Eq7jhuM"></iframe>
+	  					</div>
+			  		</div>
+			  	</div>
+			</div>
+	  	</div>
+	  	<!--END Location-->
+
+	  	<!--Sponsors-->
+	  	<div id="sponsors" class='section sponsors'>
+	  		<div class="wrapper">
+	  			<div class="row">
+			  		<div class="large-12 medium-12 small-12 columns">
+			  			<div class="content">
+			  				<div class="title">organisers</div>
+			  				<p>The London Encounter is organised by a group of friends who met through the Catholic Movement, Communion and Liberation.</p>
+			  				<p>Our faith makes us want to engage in a dialogue with everyone, of whatever religion, background, political persuasion or tradition, about what it means to be human, what truly fulfils us and how best we can face the challenges of daily life. We believe that only by sharing our experience in a spirit of openness and mutual respect can we build the common good together.</p>
+							<p>The London Encounter is organised through a charitable trust, Manalive, Charity number 1106302.</p>
+							<p class="bold">The Rt Rev. and the Rt Hon. Lord Rowan Williams patronises the 2015 edition.</p>
+							<div class='donate'>
+								<!--START BANNER: from http://www.btplc.com/mydonate/ -->
+								<a href="https://mydonate.bt.com/donation/donate.html?charity=manalive" target="_blank"><img src="https://mydonate.bt.com/images/promotional/buttons/charities/200x115/black/button-1.gif" border="0"></a>
+								<!--END BANNER: from http://www.btplc.com/mydonate/ -->
+							</div>
+
+							<!-- <div class='sponsors'>
+								<div class='sponsors_title'>Sponsored by:</div>
+								<div class="golden">
+									<a target="_blank" href='http://www.lambda-tek.com/'>
+										<img src="imgs/sponsors/lambdateck_logo.png">
+									</a>
+								</div>
+								<div class="bronze">
+									<a target="_blank" href='http://www.disource.co.uk/'>
+										<img src="imgs/sponsors/dsource.png">
+									</a>
+									<a target="_blank" href='http://www.good-works.org.uk/'>
+										<img src="imgs/sponsors/goodworks.png" class='no_margin' style='height: 60px;'>
+									</a>
+								</div>
+								<div class='sponsor'>
+									<div class='sponsor_bg' style='background-image:url("imgs/sponsors/lambdateck_bg.png")'></div>
+									<a href='http://www.lambda-tek.com/' class='sponsor_overlay'></a>
+									<div class='sponsor_logo' style='background-image:url("imgs/sponsors/lambdateck.png")'></div>
+								</div>
+								<div class='sponsor'>
+									<div class='sponsor_bg' style='background-image:url("imgs/sponsors/lambdateck_bg.png")'></div>
+									<a href='http://www.disource.co.uk/' class='sponsor_overlay'></a>
+									<div class='sponsor_logo' style='background-image:url("imgs/sponsors/lambdateck.png")'></div>
+								</div>
+							</div> -->
+			  			</div>
+			  		</div>
+			  	</div>
+			</div>
+	  	</div>
+	  	<!--END Sponsors-->
+
+	  	<!--Footer-->
+	  	<div class="footer">
+	  		<div class="wrapper">
+	  			<div class="row">
+	  				<div class="large-5 medium-6 small-12 columns">
+	  					<div class="left_container line">
+	  						<div class="f_logo"></div>
+		  					<div class="f_date">06.06.2015</div>
+			  				<div class="f_where">155 BISHOPSGATE</div>
+			  			</div>
+	  				</div>
+	  				<div class="large-4 medium-4 small-12 columns gocentral">
+	  					<div class="line">
+		  					<div class="f_trademark">&#174;the london encounter</div>
+		  					<div class="f_address">London - UK</div>
+		  					<div class="f_phone"><a href="mailto:info@thelondonencounter.co.uk">info@thelondonencounter.co.uk</a></div>
+		  				</div>
+	  				</div>
+	  				<div class="large-3 medium-2 small-12 columns gocentral">
+	  					<div class="f_social">
+	  						<p>FIND US ON:</p>
+	  						<a target="_blank" href="https://www.facebook.com/TheLondonEncounter"><img src="imgs/facebook_foot.png"/></a>
+					      	<a target="_blank" href="https://twitter.com/LondonEncounter"><img src="imgs/twitter_foot.png"/></a>
+	  					</div>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<!--END Footer-->
+	</div>
 </body>

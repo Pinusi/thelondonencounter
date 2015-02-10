@@ -1,0 +1,73 @@
+.talks{
+	background-image: url("../imgs/talks_bg.png");
+	color: $white;
+
+	.talk_title{
+		padding: 10px;
+		line-height: 20px;
+		font-weight: bold;
+		font-size: 20px;
+		color: $white;
+		word-break: break-word;
+		font-family: 'Arimo', sans-serif;
+	}
+
+	.desc{
+		font-size: 14px;
+		line-height: 19px;
+		margin-bottom: 30px;
+		font-family: 'Droid Serif', serif;
+		color: $black;
+		padding: 20px;
+		background: rgba( $white, .6 );
+	}
+
+	.relators{
+		margin-top: 20px;
+		font-size: 12px;
+		line-height: 14px;
+
+		.relator{
+			margin-bottom: 15px;
+		}
+
+		.rel_title{
+			font-family: 'Arimo', sans-serif;
+			font-weight: bold;
+			margin-bottom: 18px;
+			font-size: 16px;
+		}
+
+		.relator_photo{
+			float: left;
+			display: inline-block;
+			width: 60px;
+			height: 60px;
+			border-radius: 30px;
+			background-color: black;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			background-size: cover;
+			background-position: 50%;
+		}
+
+		.relator_name{
+			font-weight: 800;
+			margin-bottom: 5px;
+			font-family: 'Arimo', sans-serif;
+		}
+
+		.relator_desc{
+			margin-left: 70px;
+			line-height: 16px;
+		}
+
+		.relator_desc_more_butt,
+		.relator_desc_more_less
+		{
+			text-decoration: underline;
+			color: $orange;
+		}
+		
+	}
+}

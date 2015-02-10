@@ -1,19 +1,30 @@
-function initialize () {
+if( !THELONDONENCOUNTER ) { var THELONDONENCOUNTER = {}; }
+
+THELONDONENCOUNTER.Main = function()
+{
+	this.setListeners();
+};
+
+THELONDONENCOUNTER.Main.prototype.setListeners = function()
+{
 	$(document).foundation();
 
+	//Mobile fixes
 	var md = new MobileDetect(window.navigator.userAgent);
     if (!md.mobile()) {
 		$(".section").addClass("noMobile");
 	}
 
+	//Menu Clicks
 	// attachClick( ".logo" , "#home" );
-	attachClick( ".home_link" , "#home" );
-	attachClick( ".programme_link" , "#programme" );
-	attachClick( ".talks_link" , "#talks" );
-	attachClick( ".exibitions_link" , "#exibitions" );
-	attachClick( ".location_link" , "#location" );
-	attachClick( ".sponsors_link" , "#sponsors" );
+	this.attachClick( ".home_link" , "#home" );
+	this.attachClick( ".programme_link" , "#programme" );
+	this.attachClick( ".talks_link" , "#talks" );
+	this.attachClick( ".exibitions_link" , "#exibitions" );
+	this.attachClick( ".location_link" , "#location" );
+	this.attachClick( ".sponsors_link" , "#sponsors" );
 
+	//Mobile Menu
 	$(".sandwich").bind("click", function() {
 		$(".header_dropdown").toggleClass('showmenu');
 		return false; //Prevent Default and event bubbling.
@@ -24,13 +35,14 @@ function initialize () {
 		return false; //Prevent Default and event bubbling.
 	});
 
-	attachMore();
-	attachLess();
+	this.attachMore();
+	this.attachLess();
 
-	attachSubmenu( ".editions_link",".editions_submenu" );
-}
+	this.attachSubmenu( ".editions_link",".editions_submenu" );
+};
 
-function attachClick( source_class, target_id ){
+THELONDONENCOUNTER.Main.prototype.attachClick = function( source_class, target_id )
+{
 	$( source_class ).bind("click", function() 
 	{
 		// document.location.href = "/";
@@ -60,9 +72,10 @@ function attachClick( source_class, target_id ){
 	{
 		$( this ).find('a').removeClass('click');
 	});
-}
+};
 
-function attachMore(){
+THELONDONENCOUNTER.Main.prototype.attachMore = function()
+{
 	$( '.relator_desc_more_butt' ).bind("click", function() 
 	{
 		$(this).next().show();
@@ -70,9 +83,10 @@ function attachMore(){
 		$(this).hide();
 		$(this).parent().find('.relator_desc_more_less').show();
 	});
-}
+};
 
-function attachLess(){
+THELONDONENCOUNTER.Main.prototype.attachLess = function()
+{
 	$( '.relator_desc_more_less' ).bind("click", function() 
 	{
 		$(this).prev().hide();
@@ -80,9 +94,10 @@ function attachLess(){
 		$(this).parent().find('.relator_desc_more_butt').show();
 		$(this).parent().find('.relator_desc_more_butt').prev().show();
 	});
-}
+};
 
-function attachSubmenu( source_class, target_sub ){
+THELONDONENCOUNTER.Main.prototype.attachSubmenu = function( source_class, target_sub )
+{
 	$( source_class ).bind("click", function() 
 	{
 		if($( target_sub ).is(":visible") ){
@@ -95,9 +110,16 @@ function attachSubmenu( source_class, target_sub ){
 	var clickinside = $( target_sub );
 
 	$(document).on('click', function(e) {
-        if (!clickinside.is(e.target) && clickinside.has(e.target).length === 0) 
-        {
-            $( target_sub ).removeClass('showmenu');
-        }
-    });
-}
+		if (!clickinside.is(e.target) && clickinside.has(e.target).length === 0) 
+		{
+			$( target_sub ).removeClass('showmenu');
+		}
+	});
+};
+
+/*
+Initialise the main object
+*/
+$(document).ready(function($) {
+	window.THELONDONENCOUNTER = new THELONDONENCOUNTER.Main();
+});

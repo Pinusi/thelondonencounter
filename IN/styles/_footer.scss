@@ -1,0 +1,105 @@
+/*Footer*/
+.footer{
+	background-image: url("../imgs/footer_bg.png");
+	background-repeat: repeat;
+	color: $light-grey;
+	font-family: 'Arimo', sans-serif;
+
+	.columns{
+		padding: 20px;
+		padding-right: 0px;
+	}
+
+	.f_date{
+		color: $orange;
+		font-size: 30px;
+		line-height: 32px;
+		font-weight: bold;
+	}
+
+	.f_where{
+		color: $orange;
+		font-size: 20px;
+		line-height: 22px;
+	}
+
+	.f_logo{
+		background-image: url("../imgs/home_logo.png");
+		width: 70px;
+		height: 129px;
+		background-size: cover;
+		float: left;
+	}
+
+	.f_trademark{
+		font-size: 22px;
+		line-height: 23px;
+		margin-bottom: 10px;
+		padding-right: 20px;
+		font-weight: bold;
+	}
+
+	.f_address{
+		font-size: 12px;
+		line-height: 14px;
+		word-break: break-all;
+		padding-right: 20px;
+	}
+
+	.f_phone{
+		font-size: 12px;
+		line-height: 16px;
+		margin-top: 10px;
+		color: $orange;
+		word-break: break-all;
+		padding-right: 20px;
+
+		a{
+			color: $orange;
+		}
+	}
+
+	.f_social{
+		font-size: 15px;
+	}
+
+	p{
+		margin-bottom: 10px;
+		font-size: 13px;
+	}
+
+	.left_container{
+		float: right;
+		width: 295px;
+		text-align: right;
+		padding-right: 20px;
+	}
+
+	.line{
+		border-right: solid 1px;
+		height: 130px;
+	}
+
+	@media ( max-width: 640px ){
+		.gocentral{
+			text-align: center;
+			padding-top: 0px;
+		}
+
+		.line{
+			border:none;
+			border-bottom: solid 1px;
+		}
+
+		.columns{
+			padding-right: 20px;
+		}
+
+		.left_container{
+		width: 100%;
+		padding-right: 0px;
+		padding-bottom: 20px;
+		height: auto;
+		}
+	}
+}
