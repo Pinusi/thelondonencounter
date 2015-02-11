@@ -4,4 +4,24 @@ $ed-2015-folder: "../imgs/ed_2015";
 	.home{
 		background-image: url(#{$ed-2015-folder}/home_bg.jpg);
 	}
+
+	.talks{
+		background-image: url(#{$ed-2015-folder}/talks_bg.png);
+	}
+
+	.exibitions{
+		background-image: url(#{$ed-2015-folder}/exibitions_bg.png);
+	}
+	
+	.programme{
+		background-image: url(#{$ed-2015-folder}/programme_bg.png);
+	}
+
+	.sponsors{
+		background-image: url(#{$ed-2015-folder}/sponsors_bg.png);
+	}
+
+	.location{
+		background-image: url(#{$ed-2015-folder}/location_bg.png);
+	}
 }
