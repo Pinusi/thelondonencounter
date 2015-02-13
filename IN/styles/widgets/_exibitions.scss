@@ -54,4 +54,42 @@
 		}
 	}
 
+	&.exibitions_past{
+		.title{
+			text-align: right;
+		}
+
+		.desc{
+			font-size: 14px;
+			line-height: 18px;
+			text-align: left;
+			color: $black;
+		}
+
+		.image{
+			float: left;
+			background-image: url("../imgs/exibition_blank.jpg");
+			width: 150px;
+			height: 150px;
+			display: block;
+			margin-right: 20px;
+			margin-bottom: 20px;
+			background-size: cover;
+			border: solid 1px $orange;
+		}
+
+		.desc_content{
+			margin-top: 0px;
+		}
+
+		.links{
+			text-align: left;
+			padding-top: 20px;
+			font-size: 18px;
+
+			i{
+				color: $black;
+			}
+		}
+	}
 }

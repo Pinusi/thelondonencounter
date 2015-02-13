@@ -41,7 +41,7 @@ module.exports = function(grunt) {
           tasks: ['cssmin']
       },
       other:{
-        files: ['<%= cartelle.development %>{,*/}*.{ico,png,txt,jpg}',
+        files: ['<%= cartelle.development %>imgs/{,*/}*.{ico,png,jpg}',
                 '<%= cartelle.development %>/{,*/}*.html',
                 '<%= cartelle.development %>styles/fonts/{,*/}*.*'],
         tasks: ['copy']
@@ -178,8 +178,7 @@ module.exports = function(grunt) {
                 src: [
                     '*.{ico,png,txt}',
                     '{,*/}*.html',
-                    'styles/fonts/{,*/}*.*',
-                    'bower_components/**'
+                    'styles/fonts/{,*/}*.*'
                 ]
             }]
         }
@@ -213,11 +212,18 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
-      dist: {
+      build: {
           files: {
               '<%= cartelle.distribution %>/styles/main.css': [
                   '.tmp/styles/{,*/}*.css',
                   '<%= cartelle.development %>/styles/{,*/}*.css'
+              ]
+          }
+      },
+      third_parties: {
+          files: {
+              '<%= cartelle.distribution %>/styles/3rd_parties.css': [
+                  '<%= cartelle.development %>/bower_components/foundation/css/{,*/}*.css'
               ]
           }
       }

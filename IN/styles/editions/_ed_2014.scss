@@ -6,14 +6,15 @@ $ed-2014-folder: "../imgs/ed_2014";
 	}
 
 	.talks{
+		background-image: url(#{$ed-2014-folder}/talks_bg.png);
 
 	}
 
 	.exibitions{
-		/*background-image: url("../imgs/exibitions_bg.png");*/
+		background-image: url(#{$ed-2014-folder}/exibitions_bg.png);
 	}
 
-	.photos{
-		
-	}
+	/*.photos{
+
+	}*/
 }

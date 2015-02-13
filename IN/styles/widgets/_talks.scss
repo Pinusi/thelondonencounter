@@ -69,4 +69,56 @@
 		}
 		
 	}
+
+	&.talks_past{
+		color: $dark-grey;
+
+		.talk{
+			margin-top: 20px;
+		}
+
+		.talk_title_past{
+			line-height: 20px;
+			font-weight: 700;
+			font-size: 20px;
+			word-break: break-word;
+			font-family: Arimo,sans-serif;
+		}
+
+		.desc_past{
+			font-size: 14px;
+			line-height: 19px;
+			margin-top: 15px;
+			font-family: 'Droid Serif',serif;
+			color: #000;
+		}
+
+		.relator_photo_past{
+			width: 60px;
+			height: 60px;
+			border-radius: 30px;
+			background-color: #000;
+			display: inline-block;
+			background-size: cover;
+			background-position: 50%;
+			border: solid 2px;
+		}
+
+		.relators{
+			border-bottom: solid 1px $orange;
+
+			.relator{
+				width: 20%;
+				float: left;
+				text-align: center;
+
+				@media ( max-width: 615px ){
+					width: 25%;
+				}
+				@media ( max-width: 420px ){
+					width: 50%;
+				}
+			}
+		}
+	}
 }
