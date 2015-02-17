@@ -1,0 +1,22 @@
+{
+	"scripts":{
+		"main":[
+			"IN/scripts/Main.js",
+			"IN/scripts/WidgetController.js",
+			"IN/scripts/widgets/PhotosWidget.js"
+		],
+		"3rd_parties":[
+			"IN/bower_components/jquery/dist/jquery.min.js",
+			"IN/bower_components/foundation/js/foundation.min.js",
+			"IN/bower_components/mobile-detect/mobile-detect.min.js",
+			"IN/3rd_parties_lib/supersized/js/supersized.3.2.7.js"
+		]
+	},
+	"css":{
+		"3rd_parties":[
+			"IN/3rd_parties_lib/supersized/css/supersized.css",
+			"IN/bower_components/foundation/css/foundation.css",
+			"IN/bower_components/foundation/css/normalize.css"
+		]
+	}
+}

@@ -7,7 +7,8 @@ THELONDONENCOUNTER.Main = function()
 
 THELONDONENCOUNTER.Main.prototype.setListeners = function()
 {
-	$(document).foundation();
+	Foundation.global.namespace = '';
+    $(document).foundation();
 
 	//Mobile fixes
 	var md = new MobileDetect(window.navigator.userAgent);
@@ -121,5 +122,5 @@ THELONDONENCOUNTER.Main.prototype.attachSubmenu = function( source_class, target
 Initialise the main object
 */
 $(document).ready(function($) {
-	window.THELONDONENCOUNTER = new THELONDONENCOUNTER.Main();
+	window.TLE = new THELONDONENCOUNTER.Main();
 });

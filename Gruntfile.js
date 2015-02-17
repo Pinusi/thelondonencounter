@@ -3,41 +3,41 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Time how long tasks take. Can help when optimizing build times
-    require('time-grunt')(grunt);
+  require('time-grunt')(grunt);
 
   // Project configuration.
   grunt.initConfig({
+
+    //JSON Configs
+    gruntConfig: grunt.file.readJSON('gruntConfig.json'),
+    pkg: grunt.file.readJSON('package.json'),
 
     //Cartelle
     cartelle: {
       development: 'IN',
       distribution: 'OUT',
-      temporary: '.tmp'
+      temporary: '.tmp',
+      test: 'TESTS'
     },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-          files: ['<%= cartelle.development %>/scripts/{,*/}*.js'],
-          tasks: ['jshint','uglify','concat'],
-          options: {
-              livereload: true
-          }
-      },
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep']
+          files: ['<%= cartelle.development %>/scripts/{,*/}*.js',
+                  'gruntConfig.json'],
+          tasks: ['jshint','concat']
       },
       gruntfile: {
           files: ['Gruntfile.js'],
-          tasks: ['build']
+          tasks: ['build-test']
       },
-      compass: {
+      sass: {
           files: ['<%= cartelle.development %>/styles/{,*/}*.{scss,sass}'],
-          tasks: ['compass', 'cssmin']
+          tasks: ['sass', 'cssmin']
       },
       styles: {
-          files: ['<%= cartelle.development %>/styles/{,*/}*.css'],
+          files: ['gruntConfig.json',
+                  '<%= cartelle.development %>/styles/{,*/}*.css'],
           tasks: ['cssmin']
       },
       other:{
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
               '<%= cartelle.distribution %>/{,*/}*.html',
               '<%= cartelle.distribution %>/styles/{,*/}*.css',
               '<%= cartelle.distribution %>/scripts/{,*/}*.js',
-              '<%= cartelle.distribution %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
+              '<%= cartelle.distribution %>/images/{,*/}*.{jpeg,jpg,png}'
           ]
       }
     },
@@ -77,24 +77,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // wiredep: {
-    //   target: {
-    //     src: 'IN/index.html' // point to your HTML file.
-    //   }
-    // },
-
-    bower_concat: {
-      all: {
-        dest: '<%= cartelle.temporary %>/scripts/bower.js',
-        exclude: [
-          'fastclick'
-        ],
-        dependencies: {
-          'foundation': ['jquery']
-        }
-      }
-    },
-
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
        options: {
@@ -112,40 +94,74 @@ module.exports = function(grunt) {
         ]
     },
 
-    compass: {
-        options: {
-            sassDir: '<%= cartelle.development %>/styles',
-            cssDir: '<%= cartelle.temporary %>/styles',
-            generatedImagesDir: '<%= cartelle.development %>/imgs',
-            imagesDir: '<%= cartelle.development %>/imgs',
-            javascriptsDir: '<%= cartelle.development %>/scripts',
-            fontsDir: '<%= cartelle.development %>/styles/fonts',
-            importPath: '<%= cartelle.development %>/scripts',
-            httpImagesPath: '/imgs',
-            httpGeneratedImagesPath: '/imgs/generated',
-            httpFontsPath: '/styles/fonts',
-            relativeAssets: false,
-            assetCacheBuster: false
-        },
-            server: {
-                options: {
-                    debugInfo: false
-                }
-            }
-    },
-
-    pkg: grunt.file.readJSON('package.json'),
-
     // Run some tasks in parallel to speed up build process
     concurrent: {
       dist: [
           'imagemin',
           'svgmin',
-          'compass'
+          'sass'
       ]
     },
 
-   imagemin: {
+    // Copies remaining files to places other tasks can use
+    copy: {
+        dist: {
+            files: [{
+                expand: true,
+                dot: true,
+                cwd: '<%= cartelle.development %>',
+                dest: '<%= cartelle.distribution %>',
+                src: [
+                    '{,*/}*.html',
+                    'styles/fonts/{,*/}*.*'
+                ]
+            }]
+        }
+    },
+
+    // 'ftp-deploy': {
+    //     build: {
+    //       auth: {
+    //         host: '23.229.173.40',
+    //         port: 21,
+    //         authKey: 'key1'
+    //       },
+    //       src: '<%= cartelle.distribution %>',
+    //       dest: 'public_html/test'
+    //     }
+    // },
+
+    concat: {
+      options: {
+        separator: ';',
+      },
+      main_scripts: {
+        src: ['<%= gruntConfig.scripts.main %>'],
+        dest: '<%= cartelle.distribution %>/scripts/scripts.min.js',
+      },
+      third_parties_scripts:{
+        src: '<%= gruntConfig.scripts.3rd_parties %>',
+        dest: '<%= cartelle.distribution %>/scripts/3rd_parties.min.js'
+      }
+    },
+
+    cssmin: {
+      main_css: {
+          files: {
+              '<%= cartelle.distribution %>/styles/main.css': [
+                  '.tmp/styles/{,*/}*.css',
+                  '<%= cartelle.development %>/styles/{,*/}*.css'
+              ]
+          }
+      },
+      third_parties_css: {
+          files: {
+              '<%= cartelle.distribution %>/styles/3rd_parties.css': ['<%= gruntConfig.css.3rd_parties %>']
+          }
+      }
+    },
+
+    imagemin: {
         dist: {
             files: [{
                 expand: true,
@@ -154,6 +170,29 @@ module.exports = function(grunt) {
                 dest: '<%= cartelle.distribution %>/imgs'
             }]
         }
+    },
+
+    //Jasmine
+    jasmine: {
+      test: {
+        src: '<%= cartelle.development %>/scripts/{,*/,**/}*.js',
+        options: {
+          specs: '<%= cartelle.test %>/*Spec.js',
+          helpers: '<%= cartelle.test %>/*Helper.js',
+          vendor: '<%= gruntConfig.3rd_parties %>'
+        }
+      }
+    },
+
+    sass: {                              // Task
+      dist: {                            // Target
+        options: {                       // Target options
+          style: 'expanded'
+        },
+        files: {                         // Dictionary of files
+          '<%= cartelle.temporary %>/styles/style.css': '<%= cartelle.development %>/styles/style.scss'
+        }
+      }
     },
 
     svgmin: {
@@ -167,65 +206,18 @@ module.exports = function(grunt) {
         }
     },
 
-    // Copies remaining files to places other tasks can use
-    copy: {
-        dist: {
-            files: [{
-                expand: true,
-                dot: true,
-                cwd: '<%= cartelle.development %>',
-                dest: '<%= cartelle.distribution %>',
-                src: [
-                    '*.{ico,png,txt}',
-                    '{,*/}*.html',
-                    'styles/fonts/{,*/}*.*'
-                ]
-            }]
-        }
-    },
-
     uglify: {
-      build: {
-        src: '<%= cartelle.development %>/scripts/scripts.js',
+      main: {
+        src: '<%= cartelle.development %>/scripts/{,*/,**/}*.js',
         dest: '<%= cartelle.distribution %>/scripts/scripts.min.js'
       },
-      bower: {
-        src: '<%= cartelle.temporary %>/scripts/bower.js',
-        dest: '<%= cartelle.distribution %>/scripts/bower.min.js'
-      }
-    },
-
-    'ftp-deploy': {
-        build: {
-          auth: {
-            host: '23.229.173.40',
-            port: 21,
-            authKey: 'key1'
-          },
-          src: '<%= cartelle.distribution %>',
-          dest: 'public_html/test'
-        }
-    },
-
-    concat: {
-      dist: {}
-    },
-
-    cssmin: {
-      build: {
-          files: {
-              '<%= cartelle.distribution %>/styles/main.css': [
-                  '.tmp/styles/{,*/}*.css',
-                  '<%= cartelle.development %>/styles/{,*/}*.css'
-              ]
-          }
-      },
+      // bower: {
+      //   src: '<%= cartelle.temporary %>/scripts/bower.js',
+      //   dest: '<%= cartelle.distribution %>/scripts/bower.min.js'
+      // },
       third_parties: {
-          files: {
-              '<%= cartelle.distribution %>/styles/3rd_parties.css': [
-                  '<%= cartelle.development %>/bower_components/foundation/css/{,*/}*.css'
-              ]
-          }
+        src: '<%= gruntConfig.3rd_parties %>',
+        dest: '<%= cartelle.distribution %>/scripts/3rd_parties.min.js'
       }
     },
 
@@ -237,12 +229,19 @@ module.exports = function(grunt) {
             ]
   });
   
-  grunt.registerTask('build', [
+  grunt.registerTask('build-prod', [
         'clean',
         'jshint',
         'concurrent',
-        'bower_concat',
         'uglify',
+        'cssmin',
+        'copy'
+    ]);
+
+  grunt.registerTask('build-test', [
+        'clean',
+        'jshint',
+        'concurrent',
         'concat',
         'cssmin',
         'copy'
@@ -250,18 +249,25 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', [
-    'build',
+    'build-prod',
     'connect:livereload',
     'watch'
     ]);
 
-  grunt.registerTask('ftp-test', [
-    'build',
-    'ftp-deploy'
-    ]);
+  // grunt.registerTask('ftp-test', [
+  //   'build',
+  //   'ftp-deploy'
+  //   ]);
 
-  grunt.registerTask('ftp-prod', [
-    'build',
-    'ftp:production'
+  // grunt.registerTask('ftp-prod', [
+  //   'build',
+  //   'ftp:production'
+  //   ]);
+
+  grunt.registerTask('test', [
+    // 'jasmine',
+    'build-test',
+    'connect:livereload',
+    'watch'
     ]);
 };
