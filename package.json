@@ -22,7 +22,13 @@
     "grunt-concurrent": "~0.4.0",
     "grunt-ftp-deploy": "v0.1.3",
     "grunt-bower-concat": "~0.3.0",
-    "grunt-contrib-jasmine": "0.8.2"
+    "grunt-includes": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "grunt-karma": "latest",
+    "karma": "latest",
+    "karma-jasmine": "latest",
+    "karma-jasmine-jquery": "latest",
+    "karma-coverage": "latest"
   },
   "repository" :
    { 

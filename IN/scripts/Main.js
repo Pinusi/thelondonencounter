@@ -47,15 +47,16 @@ THELONDONENCOUNTER.Main.prototype.attachClick = function( source_class, target_i
 	$( source_class ).bind("click", function() 
 	{
 		// document.location.href = "/";
-		if( document.location.href === "/" ){
-			document.location.href = "/";
-			setTimeout(function(){
-				$(window).scrollTop($( target_id ).offset().top);
-			}, 0);
-		}
-		else{
-			$(window).scrollTop($( target_id ).offset().top);
-		}
+		// if( document.location.href === "/" ){
+		// 	document.location.href = "/";
+		// 	setTimeout(function(){
+		// 		$(window).scrollTop($( target_id ).offset().top);
+		// 	}, 0);
+		// }
+		// else{
+		// 	$(window).scrollTop($( target_id ).offset().top);
+		// }
+		$(window).scrollTop($( target_id ).offset().top);
 
 		if($(".header_dropdown").is(":visible") ){
 			$(".header_dropdown").toggleClass('showmenu');

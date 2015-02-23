@@ -6,9 +6,9 @@
 			"IN/scripts/widgets/PhotosWidget.js"
 		],
 		"3rd_parties":[
-			"IN/bower_components/jquery/dist/jquery.min.js",
-			"IN/bower_components/foundation/js/foundation.min.js",
-			"IN/bower_components/mobile-detect/mobile-detect.min.js",
+			"IN/bower_components/jquery/dist/jquery.js",
+			"IN/bower_components/foundation/js/foundation.js",
+			"IN/bower_components/mobile-detect/mobile-detect.js",
 			"IN/3rd_parties_lib/supersized/js/supersized.3.2.7.js"
 		]
 	},

@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       js: {
           files: ['<%= cartelle.development %>/scripts/{,*/}*.js',
                   'gruntConfig.json'],
-          tasks: ['jshint','concat']
+          tasks: ['karma:all:run','jshint','concat']
       },
       gruntfile: {
           files: ['Gruntfile.js'],
@@ -40,11 +40,23 @@ module.exports = function(grunt) {
                   '<%= cartelle.development %>/styles/{,*/}*.css'],
           tasks: ['cssmin']
       },
+      html:{
+        files: ['<%= cartelle.development %>/html/{,*/}*.html',
+                '<%= cartelle.development %>/html/includes/{,*/}*.html'],
+        tasks: ['includes']
+      },
       other:{
         files: ['<%= cartelle.development %>imgs/{,*/}*.{ico,png,jpg}',
-                '<%= cartelle.development %>/{,*/}*.html',
                 '<%= cartelle.development %>styles/fonts/{,*/}*.*'],
         tasks: ['copy']
+      },
+      // jasmine:{
+      //   files: ['<%= cartelle.test %>/*Spec.js'],
+      //   tasks: ['karma']
+      // },
+      karma: {
+        files: ['<%= cartelle.test %>/**/*.js'],
+        tasks: ['karma:all:run'] //NOTE the :run flag
       },
       livereload: {
           options: {
@@ -84,6 +96,7 @@ module.exports = function(grunt) {
           eqeqeq: true,
           eqnull: true,
           browser: true,
+          '-W099': true,
           globals: {
             jQuery: true
           },
@@ -98,7 +111,6 @@ module.exports = function(grunt) {
     concurrent: {
       dist: [
           'imagemin',
-          'svgmin',
           'sass'
       ]
     },
@@ -112,24 +124,12 @@ module.exports = function(grunt) {
                 cwd: '<%= cartelle.development %>',
                 dest: '<%= cartelle.distribution %>',
                 src: [
-                    '{,*/}*.html',
+                    // '{,*/}*.html',
                     'styles/fonts/{,*/}*.*'
                 ]
             }]
         }
     },
-
-    // 'ftp-deploy': {
-    //     build: {
-    //       auth: {
-    //         host: '23.229.173.40',
-    //         port: 21,
-    //         authKey: 'key1'
-    //       },
-    //       src: '<%= cartelle.distribution %>',
-    //       dest: 'public_html/test'
-    //     }
-    // },
 
     concat: {
       options: {
@@ -161,6 +161,27 @@ module.exports = function(grunt) {
       }
     },
 
+    'ftp-deploy': {
+        test: {
+          auth: {
+            host: '23.229.173.40',
+            port: 21,
+            authKey: 'key1'
+          },
+          src: '<%= cartelle.distribution %>',
+          dest: 'public_html/test'
+        },
+        prod: {
+          auth: {
+            host: '23.229.173.40',
+            port: 21,
+            authKey: 'key1'
+          },
+          src: '<%= cartelle.distribution %>',
+          dest: 'public_html'
+        }
+    },
+
     imagemin: {
         dist: {
             files: [{
@@ -172,15 +193,43 @@ module.exports = function(grunt) {
         }
     },
 
-    //Jasmine
-    jasmine: {
-      test: {
-        src: '<%= cartelle.development %>/scripts/{,*/,**/}*.js',
+    includes: {
+      files: {
+        src: '<%= cartelle.development %>/html/*.html', // Source files
+        dest: '<%= cartelle.distribution %>', // Destination directory
+        flatten: true,
+        cwd: '.',
         options: {
-          specs: '<%= cartelle.test %>/*Spec.js',
-          helpers: '<%= cartelle.test %>/*Helper.js',
-          vendor: '<%= gruntConfig.3rd_parties %>'
+          silent: true
         }
+      }
+    },
+
+    //Jasmine
+    // jasmine: {
+    //   test: {
+    //     src: '<%= cartelle.development %>/scripts/{,*/,**/}*.js',
+    //     options: {
+    //       specs: '<%= cartelle.test %>/*Spec.js',
+    //       helpers: '<%= cartelle.test %>/*Helper.js',
+    //       vendor: [
+    //         '<%= gruntConfig.scripts.3rd_parties %>'
+    //       ]
+    //     }
+    //   }
+    // },
+
+    karma: {
+      all:{
+          configFile: '<%= cartelle.test %>/karma.conf.js',
+          background: true,
+          singleRun: false
+          // ,
+          // files: [
+          //   "<%= gruntConfig.scripts.3rd_parties %>",
+          //   "<%= cartelle.development %>/scripts/{,*/,**/}*.js",
+          //   "TESTS/specs/**/*.js"
+          // ]
       }
     },
 
@@ -211,12 +260,8 @@ module.exports = function(grunt) {
         src: '<%= cartelle.development %>/scripts/{,*/,**/}*.js',
         dest: '<%= cartelle.distribution %>/scripts/scripts.min.js'
       },
-      // bower: {
-      //   src: '<%= cartelle.temporary %>/scripts/bower.js',
-      //   dest: '<%= cartelle.distribution %>/scripts/bower.min.js'
-      // },
       third_parties: {
-        src: '<%= gruntConfig.3rd_parties %>',
+        src: '<%= gruntConfig.scripts.3rd_parties %>',
         dest: '<%= cartelle.distribution %>/scripts/3rd_parties.min.js'
       }
     },
@@ -235,6 +280,7 @@ module.exports = function(grunt) {
         'concurrent',
         'uglify',
         'cssmin',
+        'includes',
         'copy'
     ]);
 
@@ -244,28 +290,28 @@ module.exports = function(grunt) {
         'concurrent',
         'concat',
         'cssmin',
+        'includes',
         'copy'
     ]);
 
   // Default task(s).
-  grunt.registerTask('default', [
+  grunt.registerTask('prod', [
+    'build-prod'
+  ]);
+
+  grunt.registerTask('ftp-test', [
     'build-prod',
-    'connect:livereload',
-    'watch'
+    'ftp-deploy:test'
     ]);
 
-  // grunt.registerTask('ftp-test', [
-  //   'build',
-  //   'ftp-deploy'
-  //   ]);
+  grunt.registerTask('ftp-prod', [
+    'build-prod',
+    'ftp-deploy:prod'
+    ]);
 
-  // grunt.registerTask('ftp-prod', [
-  //   'build',
-  //   'ftp:production'
-  //   ]);
-
-  grunt.registerTask('test', [
+  grunt.registerTask('default', [
     // 'jasmine',
+    'karma',
     'build-test',
     'connect:livereload',
     'watch'
