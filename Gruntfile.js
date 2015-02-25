@@ -55,7 +55,7 @@ module.exports = function(grunt) {
       //   tasks: ['karma']
       // },
       karma: {
-        files: ['<%= cartelle.test %>/**/*.js'],
+        files: ['<%= cartelle.test %>/**/*'],
         tasks: ['karma:all:run'] //NOTE the :run flag
       },
       livereload: {

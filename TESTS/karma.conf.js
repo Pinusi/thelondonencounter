@@ -3,7 +3,7 @@
 module.exports = function(config) {
   config.set({
 
-  	runnerPort: 5000,
+  	runnerPort: 9876,
 
   	// base path, that will be used to resolve files and exclude
     basePath: '../',
@@ -15,7 +15,16 @@ module.exports = function(config) {
 		"IN/bower_components/mobile-detect/mobile-detect.js",
 		"IN/3rd_parties_lib/supersized/js/supersized.3.2.7.js",
     	"IN/scripts/**/*.js",
-    	"TESTS/specs/**/*.js"],
+    	"TESTS/specs/**/*.js",
+    	{
+			pattern: 'TESTS/fixtures/**/*.html',
+			watched: true,
+			included: false,
+			served: true
+		}
+  	],
+
+  	preprocessors: { "TESTS/fixtures/**/*.html": [] },
 
     // Start these browsers, currently available:
     // - Chrome
@@ -25,7 +34,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS','Chrome'],
 
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine-jquery','jasmine'],
@@ -36,6 +45,6 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-jasmine-jquery',
 	  'karma-coverage'
-    ],
+    ]
   });
 };
