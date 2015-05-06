@@ -32,7 +32,7 @@ describe('THELONDONENCOUNTER.Main', function() {
 		it("should attach the click", function() {
       spyOnEvent('.exibitions_link', 'click');
       mouseclick( $('.exibitions_link')[0] );
-      expect('click').toHaveBeenTriggeredOn('.exibitions_link');
+      expect(spiedEvent).toHaveBeenTriggeredOn('.exibitions_link');
 		});
 
     it("should attach the click", function() {
